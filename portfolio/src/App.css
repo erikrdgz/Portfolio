@@ -1,0 +1,36 @@
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  transform-origin: bottom;
+
+}
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  transform-origin: top;
+
+}
+
+/* CSS */
+.mask-image {
+  clip-path: inset(100% 100% 100% 100%); /* Start with a hidden mask */
+  animation: revealMask 2s ease-in-out forwards; /* Apply the mask animation */
+}
+
+@keyframes revealMask {
+  0% {
+      clip-path: inset(100% 100% 100% 100%); /* Initially hidden */
+  }
+  100% {
+      clip-path: inset(0% 0% 0% 0%); /* Reveal the full image */
+  }
+}

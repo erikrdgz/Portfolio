@@ -34,3 +34,12 @@
       clip-path: inset(0% 0% 0% 0%); /* Reveal the full image */
   }
 }
+
+.animated-text {
+  will-change: transform, opacity;
+}
+
+.animated-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

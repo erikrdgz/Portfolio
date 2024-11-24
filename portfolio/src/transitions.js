@@ -23,10 +23,10 @@ const transition = (OgComponent) => {
           initial={{ scaleY: 0 }} // Initially hidden
           animate={{ scaleY: 0 }} // Stay hidden during transition
           exit={{ scaleY: 1 }} // Expand to full size on exit
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="text-center">
-            <p className="text-xl font-bold" style={{ color: textColor }}>
+            <p className="text-5xl font-bold" style={{ color: textColor }}>
               ER
             </p>
           </div>
@@ -40,10 +40,10 @@ const transition = (OgComponent) => {
           initial={{ scaleY: 1 }} // Initially visible
           animate={{ scaleY: 0 }} // Shrink to hidden on transition
           exit={{ scaleY: 0 }} // Stay hidden after transition
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="text-center">
-            <p className="text-xl font-bold" style={{ color: textColor }}>
+            <p className="text-5xl font-bold" style={{ color: textColor }}>
               ER
             </p>
           </div>

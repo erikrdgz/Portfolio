@@ -5,9 +5,9 @@ const Card = ({ title, desc, role, tags, bgColor }) => {
   const { isDarkMode } = useDarkMode(); // Get dark mode state
 
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer group">
       <div
-        className={`relative overflow-hidden ${bgColor} flex flex-col w-full aspect-square`}
+        className={`relative overflow-hidden ${bgColor} flex flex-col w-full aspect-square transform transition-transform duration-300  group-hover:scale-105`}
       >
         {/* Image on top */}
         <div

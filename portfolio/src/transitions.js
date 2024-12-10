@@ -18,7 +18,7 @@ const transition = (OgComponent) => {
         {/* Slide-in Animation with Text */}
         <motion.div
           key="slide-in"
-          className="slide-in flex items-center justify-center"
+          className="slide-in flex items-center justify-center z-[19]"
           style={{ backgroundColor: backgroundColor }} // Apply dynamic background color
           initial={{ scaleY: 0 }} // Initially hidden
           animate={{ scaleY: 0 }} // Stay hidden during transition
@@ -35,7 +35,7 @@ const transition = (OgComponent) => {
         {/* Slide-out Animation with Text */}
         <motion.div
           key="slide-out"
-          className="slide-out flex items-center justify-center"
+          className="slide-out flex items-center justify-center z-[19]"
           style={{ backgroundColor: backgroundColor }} // Apply dynamic background color
           initial={{ scaleY: 1 }} // Initially visible
           animate={{ scaleY: 0 }} // Shrink to hidden on transition

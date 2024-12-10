@@ -8,7 +8,7 @@ const Banner = () => {
   const logos = ["Logo 1", "Logo 2", "Logo 3", "Logo 4", "Logo 5", "Logo 6"]; // Now with 6 logos
 
   // Set colors dynamically based on dark mode
-  const backgroundColor = isDarkMode ? "#000" : "#fff"; // Dark background for dark mode
+  const backgroundColor = isDarkMode ? "#121212" : "#f8fafc"; // Dark background for dark mode
   const textColor = isDarkMode ? "#fff" : "#000"; // White text for dark mode, black for light mode
 
   return (

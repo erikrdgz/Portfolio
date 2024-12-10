@@ -42,7 +42,7 @@ const AnimatedHeadline = ({ isDarkMode }) => {
 
   return (
     <motion.h1
-      className={`${isDarkMode ? "text-white" : "text-black"} text-4xl md:text-6xl lg:text-7xl font-bold`}
+      className={`${isDarkMode ? "text-white" : "text-black"} text-2xl md:text-4xl lg:text-5xl font-bold`}
       style={{
         perspective: "1000px",
         height: "1.5em",

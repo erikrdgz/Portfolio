@@ -8,6 +8,10 @@ import Dialpad from "./pages/Dialpad";
 import NSLS from "./pages/Nsls";
 import "./App.css";
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 // Import the DarkModeProvider to wrap the app
 import { DarkModeProvider } from "./DarkModeContext";
 

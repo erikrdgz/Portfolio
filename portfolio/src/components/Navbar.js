@@ -8,6 +8,8 @@ import { CiMenuFries } from "react-icons/ci";
 import { VscClose } from "react-icons/vsc";
 import { IoIosArrowDropdown } from "react-icons/io";
 
+import { IoIosArrowForward } from "react-icons/io";
+
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar open state
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown state
@@ -28,6 +30,8 @@ const Navbar = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <>
             {/* Navbar */}
@@ -41,7 +45,7 @@ const Navbar = () => {
                     </Link>
                     <div className="flex items-center space-x-4 ml-auto">
                         <motion.button
-                            className="p-2 rounded-full"
+                            className={`${isDarkMode ? "hover:bg-neutral-800 " : "hover:bg-white "} p-2 rounded-md hover:shadow-lg  transition-shadow duration-500`}
                             onClick={() => {
                                 setIsPressed(true); // Set press state to true on click
                                 toggleDarkMode(); // Toggle dark mode
@@ -52,7 +56,7 @@ const Navbar = () => {
                             {isDarkMode ? <CiBrightnessDown size={30} /> : <CiCloudMoon size={30} />}
                         </motion.button>
                         <button
-                            className="p-2 block z-[30]"
+                            className={`${isDarkMode ? "hover:bg-neutral-800 " : "hover:bg-white "} p-2 rounded-md hover:shadow-lg  transition-shadow duration-500 block z-[20]`}
                             onClick={toggleSidebar}
                         >
                             <CiMenuFries size={30} />
@@ -105,10 +109,21 @@ const Navbar = () => {
                         }}
                     >
                         {/* Links */}
-                        <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
-                            <Link to="/" className="py-6 text-2xl font-semibold">
-                                Home
-                            </Link>
+                        <motion.div
+                            className="relative"
+                            onHoverStart={() => setIsHovered(true)}
+                            onHoverEnd={() => setIsHovered(true)}
+                        >
+                            <motion.div
+                                className="inline-flex items-center w-full"
+                                initial={{ x: 0 }}
+                                animate={{ x: isHovered ? -5 : 0 }} // Adjusts the position of the text on hover
+                                transition={{ type: "spring", stiffness: 150, damping: 20 }} // Adds spring animation
+                            >
+                                <Link to="/" className="py-6 text-2xl font-semibold w-full">
+                                    Home
+                                </Link>
+                            </motion.div>
                         </motion.div>
                         <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
                             <Link to="/about" className="py-6 text-2xl font-semibold">
@@ -117,7 +132,7 @@ const Navbar = () => {
                         </motion.div>
 
                         <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
-                            <Link to="/work" className="py-6 text-2xl font-semibold">
+                            <Link to="/Koopid" className="py-6 text-2xl font-semibold">
                                 Work
                             </Link>
                         </motion.div>
@@ -137,6 +152,9 @@ const Navbar = () => {
                                 Let's Chat
                             </button>
                         </motion.div>
+
+                        {/*End  Links */}
+
                     </motion.div>
                 </div>
             </motion.div>

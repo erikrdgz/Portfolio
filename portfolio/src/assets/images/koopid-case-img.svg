@@ -1,7 +1,8 @@
-<svg width="392" height="392" viewBox="0 0 392 392" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="392" height="392" fill="#E9E9E9"/>
+<svg className="koopid-svg-wrapper" width="100%" height="100%" viewBox="0 0 392 392" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="392" height="392" fill="#94a3b8"   className="fill-current transition-colors duration-500 koopid-svg"/>
 <g filter="url(#filter0_d_343_1029)">
-<rect x="128" y="56" width="135" height="279" fill="url(#pattern0_343_1029)" shape-rendering="crispEdges"/>
+<rect x="128" y="56" width="135" height="279" fill="url(#pattern0_343_1029)" shape-rendering="crispEdges" className="phone"/>
+ 
 </g>
 <defs>
 <filter id="filter0_d_343_1029" x="124" y="56" width="143" height="287" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

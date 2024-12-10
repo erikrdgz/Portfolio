@@ -29,10 +29,15 @@ module.exports = {
         },
       },
       transitionProperty: {
-        'colors': 'background-color, color', // Ensure smooth transition for color changes
+        colors: "background-color, color, fill", // Ensure smooth transition for fill changes
       },
     },
   },
-  darkMode: 'class', // Enable dark mode with the "class" strategy
-  plugins: [],
+  darkMode: "class", // Enable dark mode with the "class" strategy
+  
+  variants: {
+    extend: {
+      fill: ["hover", "group-hover"], // Add hover and group-hover support for SVG fill
+    },
+  },
 };

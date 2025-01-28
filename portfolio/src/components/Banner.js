@@ -1,58 +1,89 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useDarkMode } from "../DarkModeContext"; // Assuming you're using the custom DarkModeContext
+import React from "react";
+import { motion } from "framer-motion";
+import { useDarkMode } from "../DarkModeContext";
+
+import dialpadLogo from "../assets/images/logos/dialpad-ai-logo.png";
+import nslsLogo from "../assets/images/logos/NSLS.png";
+import mistyLogo from "../assets/images/logos/misty-robotics-logo.png";
+import techtonicLogo from "../assets/images/logos/techtonic-logo.png";
+import ifccLogo from "../assets/images/logos/ifcc-logo.png";
+import koopidLogo from "../assets/images/logos/koopid-logo.png";
 
 const Banner = () => {
-  const { isDarkMode } = useDarkMode(); // Access dark mode state
-  
-  const logos = ["Logo 1", "Logo 2", "Logo 3", "Logo 4", "Logo 5", "Logo 6"]; // Now with 6 logos
+  const { isDarkMode } = useDarkMode();
 
-  // Set colors dynamically based on dark mode
-  const backgroundColor = isDarkMode ? "#121212" : "#f8fafc"; // Dark background for dark mode
-  const textColor = isDarkMode ? "#fff" : "#000"; // White text for dark mode, black for light mode
+  const logos = [
+    dialpadLogo,
+    nslsLogo,
+    mistyLogo,
+    techtonicLogo,
+    ifccLogo,
+    koopidLogo,
+  ];
+
+  // Framer Motion Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Stagger delay for child animations
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
 
   return (
-    <div
-      className="banner-container transition-colors duration-500"
-      style={{
-        overflow: "hidden",
-        backgroundColor: backgroundColor, // Apply dynamic background color
-        padding: "10px 0"
-      }}
+    <motion.div
+      className={`banner-container ${
+        isDarkMode ? "bg-black" : "bg-white"
+      } transition-colors duration-500`}
+      style={{ padding: "20px 0" }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% is visible
+      variants={containerVariants}
     >
       <motion.div
-        className="banner  py-10"
-        style={{
-          display: "flex",  // Use flexbox for horizontal layout
-          justifyContent: "space-evenly",  // Evenly space the logos
-          whiteSpace: "nowrap",  // Prevent text from wrapping
-        }}
-        animate={{
-          x: ["100%", "-100%"], // Scroll from right to left
-        }}
-        transition={{
-          repeat: Infinity,  // Infinite loop
-          repeatType: "loop", // Loop the animation
-          duration: 24, // Speed of scroll
-          ease: "linear", // Constant speed
-        }}
+        className={`grid lg:grid-cols-6 grid-cols-2 gap-4 items-center justify-center ${
+          isDarkMode ? "text-white" : "text-black"
+        }`}
       >
         {logos.map((logo, index) => (
-          <div
+          <motion.div
             key={index}
-            className="banner-item"
+            className="flex items-center justify-center"
             style={{
-              fontSize: "1.5rem", 
-              fontWeight: "bold", 
-              color: textColor, // Apply dynamic text color
-              padding: "0 10px",  // Add padding to create some space around each logo
+              margin: "auto",
             }}
+            variants={itemVariants} // Attach the item animation
           >
-            {logo}
-          </div>
+            <img
+              src={logo}
+              alt={`Logo ${index + 1}`}
+              style={{
+                height: "60px",
+                maxWidth: "100px",
+                objectFit: "contain",
+                filter: isDarkMode ? "none" : "invert(100%)",
+              }}
+            />
+          </motion.div>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

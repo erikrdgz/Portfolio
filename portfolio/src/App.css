@@ -134,12 +134,31 @@ h1,h2,h3 {
 }
 
 .bg-black{
-  background-color: #121212!important;
+  background-color: #000000!important;
 }
 
 .bg-white{
-  background-color: #f8fafc;
+  background-color: #fff;
 }
+
+.bg-black--2{
+  background-color: #232323;
+}
+
+.bg-white--2{
+  background-color: #f5fbff;
+}
+.text-xsm{
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px){
+  .text-xsm{
+    font-size: 1rem;
+  }
+}
+
+
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -154,4 +173,70 @@ h1,h2,h3 {
 
 .swiper-button-prev {
   left: 10px; /* Adjust positioning for the left arrow */
+}
+
+.icon-gradient {
+  fill: #a6e8e5 ; /* Gradient colors */
+ /* Clip the background to the text (SVG) */
+  color: transparent; /* Make the color transparent so the background is visible */
+  display: inline-block; /* Ensure the icon is treated as an inline element */
+}
+
+/* Make the scrolling banner only appear on mobile */
+@media (max-width: 640px) {
+  .scrolling-banner {
+    display: flex;
+    animation: scrollBanner 5s linear infinite;
+    overflow: hidden;
+  }
+
+  .scrolling-banner h2 {
+    animation: scrollText 5s linear infinite;
+  }
+
+  @keyframes scrollBanner {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+
+.banner-container {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.banner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .banner-item img {
+      height: 60px; /* Adjust logo size for smaller screens */
+      margin: 0 20px; /* Reduce spacing for smaller screens */
+  }
+}
+
+.fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.spline-watermark{
+  display: none!important;
 }

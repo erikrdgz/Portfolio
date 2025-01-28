@@ -13,9 +13,9 @@ const Footer = () => {
       <div
         className={`${
           isDarkMode ? "text-white" : "text-black"
-        } p-4 mt-auto transition-colors duration-500`}
+        } p-4 mt-auto transition-colors duration-500 text-center text-xsm`}
       >
-        <p>&copy; 2024 Erik Rodríguez. All rights reserved.</p>
+        <p>&copy; 2024 Erik Rodriguez. All rights reserved.</p>
       </div>
     </footer>
   );

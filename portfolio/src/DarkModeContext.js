@@ -5,7 +5,7 @@ const DarkModeContext = createContext();
 
 // Create a provider to wrap your app with
 export const DarkModeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 

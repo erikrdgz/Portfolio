@@ -27,7 +27,7 @@ const App = () => {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         
-        <div className="flex-grow pt-[64px]"> {/* Adjust pt-[64px] to match the navbar height */}
+        <div className="flex-grow "> {/* Adjust pt-[64px] to match the navbar height */}
         <AnimatePresence mode="wait"> {/* Wrap the Routes to handle transition on page exit */}
             <Routes location={location} key={location.pathname}>
               <Route index element={<Home />} />

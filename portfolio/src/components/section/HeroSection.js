@@ -13,8 +13,6 @@ const HeroSection = () => {
         backgroundImage: `url(${isDarkMode ? sand : sandLight})`, // use imported images
       }}
     >
-      {/* Overlay */}
-      <div className="" />
 
       {/* Content */}
       <div className="flex items-center justify-center w-full h-full overflow-hidden px-9">
@@ -23,7 +21,7 @@ const HeroSection = () => {
           <div className="flex md:justify-center items-center md:items-end">
             <motion.div
               className="flex items-start md:items-end justify-center md:justify-start pb-9 md:pb-0"
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
             >
@@ -31,25 +29,17 @@ const HeroSection = () => {
                 className={`${isDarkMode ? "text-white" : "text-black"} font-bold text-6xl md:text-7xl xl:text-9xl`}
               >
                 {/* "Product" */}
-                <motion.span
-                  // initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
-                  // animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
-                  // transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
-                  // style={{ willChange: "clip-path" }}
+                <span
                 >
                   Product
-                </motion.span>
+                </span>
                 <br />
                 {/* "Designer" */}
-                <motion.span
-                  // initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
-                  // animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
-                  // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                  // style={{ willChange: "clip-path" }}
+                <span
                   className="text-orange-500"
                 >
                   Designer
-                </motion.span>
+                </span>
               </h1>
             </motion.div>
           </div>
@@ -59,7 +49,7 @@ const HeroSection = () => {
             <div className="w-full md:w-10/12">
               <motion.p
                 className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-lg md:text-md lg:text-md xl:text-xl`}
-                initial={{ opacity: 0, y: window.innerWidth < 768 ? 20 : -20 }}
+                initial={{ opacity: 0, y:  -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
                 style={{ lineHeight: "1.8" }}

@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useDarkMode } from "../DarkModeContext"; // Import the custom hook for dark mode
 import transition from "../transitions";
 
-import { RxSlash } from "react-icons/rx";
 
-import koopidDesktop from '../assets/images/koopid-desktop.svg';
-import hubspot from '../assets/images/hubspot.svg';
-import legacyUi from '../assets/images/koopid-legacy-ui.svg';
+
+import koopidDesktop from '../assets/images/koopid-desktop.png';
+import hubspot from '../assets/images/hubspot.png';
+
 
 import legacyUILight from '../assets/images/Legacy-UI-Light.png';
 import legacyUIDark from '../assets/images/Legacy-UI-Dark.png';
@@ -19,8 +19,8 @@ import koopidWireframe from '../assets/images/koopid-wireframe.png';
 import av1 from "../assets/images/admin.png"
 import av2 from "../assets/images/supervisor.png"
 import av3 from "../assets/images/agent.png"
-import koopidFinal from "../assets/images/koopid-design-solution.svg";
-import koopidKnowledge from "../assets/images/koopid-knowledge.svg";
+import koopidFinal from "../assets/images/koopid-design-solution.png";
+import koopidKnowledge from "../assets/images/koopid-knowledge.png";
 
 import koopidAdminLegacy from "../assets/images/koopid-admin-legacy.png";
 import koopidAdminFinal from "../assets/images/koopid-admin-portal-final.png";
@@ -44,8 +44,8 @@ import portalBAFinal from "../assets/images/portal-ba-final.png";
 
 import SplineViewer from "../components/SplineViewer";
 
-import dialPadImageUrl from "../assets/images/dialpad-card.svg";
-import nslsImageUrl from "../assets/images/nsls-card.svg";
+import dialPadImageUrl from "../assets/images/dialpad-card.png";
+import nslsImageUrl from "../assets/images/nsls-card.png";
 
 
 const Koopid = () => {

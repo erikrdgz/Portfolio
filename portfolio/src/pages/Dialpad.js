@@ -16,12 +16,12 @@ import dialpadChatscreen from "../assets/images/dialpad-callscreen.png";
 
 import collab from "../assets/images/collab-dialpad 1.png"
 
-import koopidCaseImg from "../assets/images/koopid-card.svg";
+import koopidCaseImg from "../assets/images/koopid-card.png";
 import AnimatedBulletList from "../components/animation/AnimatedBulletList";
 
 import { BiRightArrow } from "react-icons/bi";
 import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
-import nslsImageUrl from "../assets/images/nsls-card.svg";
+import nslsImageUrl from "../assets/images/nsls-card.png";
 
 import dialpad1 from "../assets/images/dialpad-img-1.png";
 import dialpad2 from "../assets/images/dialpad-img-2.png";

@@ -12,7 +12,7 @@ import nslsImpact from "../assets/images/nsls-community-people.png";
 import appScreens from "../assets/images/App-Screens.png";
 import nslsJourney from "../assets/images/feature-journey.png";
 
-import koopidCaseImg from "../assets/images/koopid-card.svg";
+import koopidCaseImg from "../assets/images/koopid-card.png";
 
 import AnimatedBulletList from "../components/animation/AnimatedBulletList";
 
@@ -20,7 +20,7 @@ import { BiRightArrow } from "react-icons/bi";
 import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
 
 
-import dialPadImageUrl from "../assets/images/dialpad-card.svg";
+import dialPadImageUrl from "../assets/images/dialpad-card.png";
 
 
 const Nsls = () => {

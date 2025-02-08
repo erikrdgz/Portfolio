@@ -57,14 +57,14 @@ const Banner = () => {
       variants={containerVariants}
     >
       <motion.div
-        className={`grid lg:grid-cols-6 grid-cols-2 gap-4 items-center justify-center ${
+        className={`grid lg:grid-cols-6 grid-cols-2 gap-4 py-12 lg:py-20 items-center justify-center ${
           isDarkMode ? "text-white" : "text-black"
         }`}
       >
         {logos.map((logo, index) => (
           <motion.div
             key={index}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center py-6"
             style={{
               margin: "auto",
             }}

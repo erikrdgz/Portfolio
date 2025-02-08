@@ -55,15 +55,15 @@ const HeroSection = () => {
           <div className="flex justify-center items-end md:justify-start md:items-end  md:mt-0">
             <div className="w-full 4 md:w-10/12">
               <motion.p
-                className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-xl md:text-md lg:text-md xl:text-xl`}
+                className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-lg md:text-md lg:text-md xl:text-xl`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1 }}
                 style={{ lineHeight: "1.8" }}
               >
                 Welcome! I'm Erik, a product designer based in{" "}
-                <span className={`line-through ${isDarkMode ? "text-neutral-400" : "text-neutral-800"}`}>Chicago</span>,{" "}
-                Denver
+                <span className={`line-through ${isDarkMode ? "text-neutral-400" : "text-neutral-800"}`}>Chicago</span>{" "}
+                Denver,
                 focused on creating designs that help people efficiently utilize digital products and enjoy them.
               </motion.p>
             </div>

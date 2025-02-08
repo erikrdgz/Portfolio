@@ -4,13 +4,16 @@ import { useDarkMode } from "../DarkModeContext";
 import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion"; // Ensure correct imports
 import Banner from "../components/Banner";
 import ExpandableCaseStudyCard from "../components/Layout/ExpandableCaseStudyCard";
-import { ReactComponent as KoopidSVG } from "../assets/images/koopid-case-img.svg";
 import KoopidImage from "../assets/images/koopid-card.svg";
+import KoopidImageLight from "../assets/images/Mobile-koopid-light.svg";
 import dialpadImage from "../assets/images/dialpad-card.svg";
+import dialpadImageLight from "../assets/images/Mobile-dialpad-light.svg";
 import nslsImage from "../assets/images/nsls-card.svg";
+import nslsImageLight from "../assets/images/Mobile-nsls-light.svg";
 import HeroSection from "../components/section/HeroSection";
 import SkillsSection from "../components/section/SkillsSection";
 import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
+
 
 const Home = () => {
     const { isDarkMode } = useDarkMode();
@@ -80,76 +83,83 @@ const Home = () => {
                             </motion.h2>
                         </div>
                     </section>
+                    {/* <AnimatedTitle/> */}
 
                     {/* Case Study Cards */}
                     <section className="px-2 md:px-2 lg:px-9">
                         <ExpandableCaseStudyCard
                             isDarkMode={isDarkMode}
-                            mobileImg={KoopidImage}
+                            mobileImg={isDarkMode ? KoopidImage: KoopidImageLight}
                             // divColor="#004C84"
-                            divColor={isDarkMode ? "#000" : "#fff"}
+                            divColor={isDarkMode ? "#0a0a0a" : "#fff"}
                             company="Koopid"
+                             href="/Koopid"
+                             projectName="Redesign"
                             splineUrl="https://my.spline.design/iphone14procopy-8670d31454ba5292b39464d8bcf198b4/"
                             title="Unifying a product suite into a cohesive experience, landing an acquisition"
                             description="An AI company in the telecommunication space needed help establishing a cohesive design, branding, and a smooth user experience across their product line."
                             detailedDescription="A detailed description that explains the full case study."
-                            chips={['Product Designer & Developer', 'Lead UX Designer', '6 Months', 'AI Telecommunications']}
+                            chips={['Lead UX Designer & Developer',  '6 Months', 'AI Telecommunications']}
                             buttonLink="/Koopid"
                             className="duration-500 transition-colors"
-                            number1={68} // Animated number
-                            paragraph1="Decrease in time on task"
+                            number1={35} // Animated number
+                            paragraph1="Reduction in decision-making time"
                             isPercentage1={true} // Display as percentage
-                            number2={4.6} // Animated number
-                            paragraph2="User satisfaction rate"
-                            isPercentage2={false} // Display as regular number
-                            number3={34} // Animated number
-                            paragraph3="Decrease in user support tickets"
+                            number2={25} // Animated number
+                            paragraph2="Increase in user satisfaction scores"
+                            isPercentage2={true} // Display as regular number
+                            number3={54} // Animated number
+                            paragraph3="Increasing user testing feedback efficiency"
                             isPercentage3={true} // Display as regular number
                         />
 
                         <ExpandableCaseStudyCard
                             isDarkMode={isDarkMode}
-                            mobileImg={dialpadImage}
-                            divColor={isDarkMode ? "#000" : "#fff"}
+                            mobileImg={isDarkMode ? dialpadImage: dialpadImageLight}
+                            divColor={isDarkMode ? "#0a0a0a" : "#fff"}
                             company="Dialpad"
+                             href="/Dialpad"
+                             projectName="Merger"
                             splineUrl="https://my.spline.design/studiodisplaymockup-9508385c4955206e0e3bd5c0de3013f9/"
                             title="Merging an existing product into a comprehensive product suite"
                             description="After a successful aquisition, Dialpad needed to bring in Koopid's robust products into their suite while avoiding technical debt and seamlessly integrating both user experiences, that's where I stepped in."
                             detailedDescription="A detailed description that explains the full case study."
-                            chips={['Product Designer', '4 Months', 'Video Conference Technology']}
-                            buttonLink="/Koopid"
-                            number1={95} // Animated number
-                            paragraph1="Customer satisfaction rate."
+                            chips={['Product Designer', '4 Months', 'A.I. & Video Conference Technology']}
+                            buttonLink="/Dialpad"
+                            number1={35} // Animated number
+                            paragraph1="Reducing redundant UI elements"
                             isPercentage1={true} // Display as percentage
-                            number2={150} // Animated number
-                            paragraph2="Projects completed."
-                            isPercentage2={false} // Display as regular number
-                            number3={3.5} // Animated number
-                            paragraph3="Average project rating."
-                            isPercentage3={false} // Display as regular number
+                            number2={60} // Animated number
+                            paragraph2="Reducing future design inconsistencies"
+                            isPercentage2={true} // Display as regular number
+                            number3={25} // Animated number
+                            paragraph3="Improving design-to-development handoff efficiency"
+                            isPercentage3={true} // Display as regular number
                         />
 
 
                         <ExpandableCaseStudyCard
                             isDarkMode={isDarkMode}
-                            mobileImg={nslsImage}
-                            divColor={isDarkMode ? "#000" : "#fff"}
+                            mobileImg={isDarkMode ? nslsImage: nslsImageLight}
+                            divColor={isDarkMode ? "#0a0a0a" : "#fff"}
                             company="NSLS"
-                            splineUrl="https://my.spline.design/animatedmockupiphone14pro-47f44f59f5e57d40918474619c009b55/"
+                            href="/Nsls"
+                            projectName="User Journey"
+                            splineUrl="https://my.spline.design/nslscopy-31a173977968de5bf31d3727eba973a1/"
                             title="Creating an exciting community feature for higher education"
-                            description="Memebership dropoff is not to be taken lightly, so by adding a community feature to coincide with users' need to connect, we revitalized a lacking feature that turned into one of the more succesfull usages of the app."
+                            description="Membership dropoff is not to be taken lightly, so by adding a community feature to coincide with users' need to connect, we revitalized a lacking feature that turned into one of the more succesfull usages of the app."
                             detailedDescription="A detailed description that explains the full case study."
                             chips={['Senior Product Designer', '8 Months', 'Higher Education Technology']}
-                            buttonLink="/Koopid"
-                            number1={95} // Animated number
-                            paragraph1="Customer satisfaction rate."
+                            buttonLink="/Nsls"
+                            number1={75} // Animated number
+                            paragraph1="Of users had transitioned to the mobile app"
                             isPercentage1={true} // Display as percentage
-                            number2={150} // Animated number
-                            paragraph2="Memebership dropoff is not to be taken lightly, so by adding a community feature to coincide with users' need to connect, we revitalized a lacking feature that turned into one of the more succesfull usages of the app."
-                            isPercentage2={false} // Display as regular number
-                            number3={3.5} // Animated number
-                            paragraph3="Average project rating."
-                            isPercentage3={false} // Display as regular number
+                            number2={41} // Animated number
+                            paragraph2="Forum activity surge"
+                            isPercentage2={true} // Display as regular number
+                            number3={62} // Animated number
+                            paragraph3="Course completion rates"
+                            isPercentage3={true} // Display as regular number
                         />
                     </section>
 

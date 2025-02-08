@@ -1,26 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useDarkMode } from "../DarkModeContext";
+import { HiMiniArrowUpRight } from "react-icons/hi2";
 
-const SplineViewer = ({ splineUrl, divColor }) => {
+const SplineViewer = ({ splineUrl, imageUrl, href, projectName }) => {
+  const { isDarkMode } = useDarkMode();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile screen width detection
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize); // Update on resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <motion.div
-      className="relative w-full aspect-w-1 xl:h-full h-[75vh] aspect-h-1 flex justify-center items-center px-4"
-      // initial={{ opacity: 0, y: 50 }}
-      // whileInView={{ opacity: 1, y: 0 }}
-      // viewport={{ once: true }}
-      // transition={{ duration: 1.4, ease: "easeInOut", delay: 0.6 }}
-    >
-      {/* Absolute colored div */}
-      <div
-        className="absolute bottom-0 right-7 w-40 h-16 z-10"
-        style={{ backgroundColor: divColor }}
-      ></div>
+    <motion.div className="relative w-full aspect-w-1 h-[50vh] md:h-[65vh] lg:h-full lg:h-[65vh] flex aspect-h-1 lg:flex justify-center items-center px-4">
+      {/* Conditional Rendering for Mobile */}
+      {isMobile ? (
+        <div
+          className={`absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg rounded-tl-3xl ${
+            isDarkMode ? "bg-black" : "bg-white"
+          }`}
+        >
+          <span className={`${isDarkMode ? "text-white" : "text-black"}`}>{projectName}</span>
+        </div>
+      ) : (
+        // Original link for tablet and up
+        <div
+          className="absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg"
+          style={{ backgroundColor: "#f97316" }}
+        >
+          <a
+            href={href}
+            className="flex items-center gap-2 text-white hover:scale-110 transition-transform duration-300 z-40 w-full h-full  justify-center "
+          >
+            Explore <HiMiniArrowUpRight />
+          </a>
+        </div>
+      )}
 
-      {/* Spline iframe */}
+      {/* Spline Viewer for Larger Screens */}
       <iframe
         src={splineUrl}
         title="Spline Scene"
-        className="object-contain w-full h-full rounded-xl z-0"
+        className="object-contain w-full h-full rounded-xl z-0 block lg:block"
         frameBorder="0"
       />
     </motion.div>

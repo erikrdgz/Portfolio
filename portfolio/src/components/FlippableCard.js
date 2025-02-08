@@ -9,15 +9,15 @@ const FlippableCard = ({ beforeImage, afterImage, title }) => {
   const handleFlip = () => setIsFlipped(!isFlipped);
 
   return (
-    <div className={`${isDarkMode ? "bg-neutral-950" : "shadow-md"}  p-4 rounded flex flex-col items-center justify-center w-full h-full mx-auto`}>
+    <div className={`${isDarkMode ? "" : ""}  p-4 rounded flex flex-col items-center justify-center w-full h-full mx-auto`}>
       
       {/* Card Container */}
-      <div className="relative w-full aspect-square perspective">
+      <div className="relative w-full h-96 flex items-center justify-center">
         <AnimatePresence mode="wait">
           {isFlipped ? (
             <motion.div
               key="after"
-              className="absolute inset-0 w-full h-full rounded-lg  overflow-hidden"
+              className="absolute inset-0 w-full h-full rounded-lg overflow-hidden flex items-center justify-center"
               initial={{ rotateY: -90, opacity: 0 }}
               animate={{ rotateY: 0, opacity: 1 }}
               exit={{ rotateY: 90, opacity: 0 }}
@@ -26,13 +26,13 @@ const FlippableCard = ({ beforeImage, afterImage, title }) => {
               <img
                 src={afterImage}
                 alt="Redesign"
-                className="w-full h-full object-cover"
+                className="w-auto h-auto max-w-full max-h-full object-contain  rounded-lg"
               />
             </motion.div>
           ) : (
             <motion.div
               key="before"
-              className="absolute inset-0 w-full h-full rounded-lg  overflow-hidden"
+              className="absolute inset-0 w-full h-full rounded-md overflow-hidden flex items-center justify-center"
               initial={{ rotateY: 90, opacity: 0 }}
               animate={{ rotateY: 0, opacity: 1 }}
               exit={{ rotateY: -90, opacity: 0 }}
@@ -41,7 +41,7 @@ const FlippableCard = ({ beforeImage, afterImage, title }) => {
               <img
                 src={beforeImage}
                 alt="Legacy"
-                className="w-full h-full object-cover"
+                className="w-auto h-auto max-w-full max-h-full object-contain rounded-lg"
               />
             </motion.div>
           )}
@@ -50,14 +50,14 @@ const FlippableCard = ({ beforeImage, afterImage, title }) => {
       <h3
         className={`${
           isDarkMode ? "text-white" : "text-black"
-        } text-xl font-semibold mb-5  text-center`}
+        } text-xl font-semibold mb-5 text-center`}
       >
         {title}
       </h3>
       {/* Button */}
       <button
         onClick={handleFlip}
-        className="mt-4 px-6 py-2 rounded-lg text-orange-500 text-sm sm:text-base font-medium hover:text-orange-400  focus:ring-transparent focus:outline-none transition-all duration-300"
+        className="mt-4 px-6 py-2 rounded-lg text-orange-500 text-sm sm:text-base font-medium hover:text-orange-400 focus:ring-transparent focus:outline-none transition-all duration-300"
       >
         {isFlipped ? "View Legacy" : "View Redesign"}
       </button>

@@ -133,13 +133,7 @@ h1,h2,h3 {
   font-style: normal;
 }
 
-.bg-black{
-  background-color: #000000!important;
-}
 
-.bg-white{
-  background-color: #fff;
-}
 
 .bg-black--2{
   background-color: #232323;
@@ -240,3 +234,36 @@ h1,h2,h3 {
 .spline-watermark{
   display: none!important;
 }
+
+/* Extending Tailwind’s text sizes */
+.text-10xl {
+  font-size: 10.5rem; /* 168px */
+  line-height: 1;
+}
+
+.text-11xl {
+  font-size: 13rem; /* 208px */
+  line-height: 1;
+}
+
+.text-12xl {
+  font-size: 16rem; /* 256px */
+  line-height: 1;
+}
+
+.text-13xl {
+  font-size: 20rem; /* 320px */
+  line-height: 1;
+}
+
+.text-14xl {
+  font-size: 25rem; /* 400px */
+  line-height: 1;
+}
+
+.text-15xl {
+  font-size: 31rem; /* 496px */
+  line-height: 1;
+}
+
+

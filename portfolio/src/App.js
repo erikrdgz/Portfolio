@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Koopid from "./pages/Koopid";
 import Dialpad from "./pages/Dialpad";
 import NSLS from "./pages/Nsls";
+import Designs from "./pages/Designs";
+import About from "./pages/About";
 import "./App.css";
 
 import 'swiper/css';
@@ -17,6 +19,12 @@ import { DarkModeProvider } from "./DarkModeContext";
 
 // Import AnimatePresence for page transition animations
 import { AnimatePresence } from "framer-motion";
+import FloatingSocialBar from "./components/FloatingSocialBar";
+import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./components/NotFound";
+
+import CustomCursor from "./components/CustomCursor";
+
 
 const App = () => {
 
@@ -24,6 +32,8 @@ const App = () => {
 
   return (
     <DarkModeProvider>
+       <ScrollToTop /> 
+       {/* <CustomCursor/> */}
       <div className="min-h-screen flex flex-col">
         <Navbar />
         
@@ -34,11 +44,15 @@ const App = () => {
               <Route path="/Koopid" element={<Koopid />} />
               <Route path="/Dialpad" element={<Dialpad />} />
               <Route path="/NSLS" element={<NSLS />} />
+              <Route path="/Designs" element={<Designs/>} />
+              <Route path="/About" element={<About/>} />
+              <Route path="*" element={<NotFound />} /> 
             </Routes>
             </AnimatePresence>
         </div>
-       
         <Footer />
+        <FloatingSocialBar/>       
+        
       </div>
     </DarkModeProvider>
   );

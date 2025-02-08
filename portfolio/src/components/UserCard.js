@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const UserCard = ({ avatar, title, description, tasks, isDarkMode, userVariant }) => {
   return (
     <motion.div
-      className={`${isDarkMode ? "bg-neutral-950" : "bg-white"} flex flex-col items-center p-4 rounded-lg shadow-md`} // flex-col for mobile and tablet, flex-row for desktop
+      className={`${isDarkMode ? "bg-neutral-950" : "bg-white"} flex flex-col items-center py-4 md:p-4 rounded-lg shadow-md`} // flex-col for mobile and tablet, flex-row for desktop
       variants={userVariant}
     >
       {/* Avatar */}
@@ -17,7 +17,7 @@ const UserCard = ({ avatar, title, description, tasks, isDarkMode, userVariant }
       <div className="flex flex-col p-4 md:px-8">
         <h3 className="text-xl font-semibold text-center my-4">{title}</h3>
         <p className="text-sm pb-4"><span className="text-orange-500">Key Tasks:</span> {tasks}</p>
-        <p className="mb-4 text-sm">{description}</p>
+        <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-600"} mb-4 text-sm`}>{description}</p>
         
       </div>
     </motion.div>

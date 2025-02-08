@@ -21,7 +21,7 @@ const AnimatedBulletList = ({ heading, number, paragraph, items, endingParagraph
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.8 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className={`${isDarkMode ? "text-white" : "text-black"} text-md md:text-xl xl:text-lg md:px-6 md:py-2`}
+                    className={`${isDarkMode ? "text-neutral-200" : "text-black"} text-md md:text-md xl:text-sm md:px-6 md:py-2`}
                 >
                     {paragraph}
                 </motion.p>
@@ -54,8 +54,8 @@ const AnimatedBulletList = ({ heading, number, paragraph, items, endingParagraph
                                     <item.icon className="text-md md:text-md text-orange-500" />
                                 </div>
                             )}
-                            <p className="flex-1 text-sm">
-                                <span className="font-semibold">{item.header}:</span> {item.description}
+                            <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-800"} flex-1 text-sm`}>
+                                <span className={`${isDarkMode ? "text-white" : "text-black"} font-semibold `}>{item.header}:</span> <br/>{item.description}
                             </p>
                         </motion.li>
                     ))}
@@ -67,7 +67,7 @@ const AnimatedBulletList = ({ heading, number, paragraph, items, endingParagraph
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.8 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className={`${isDarkMode ? "text-white" : "text-black"} text-md md:text-xl xl:text-lg pt-4 md:px-6 md:py-2`}
+                className={`${isDarkMode ? "text-white" : "text-black"} text-md md:text-lg xl:text-sm pt-4 md:px-6 md:py-2`}
                 >
                     <p>{endingParagraph}</p>
                 </motion.div>

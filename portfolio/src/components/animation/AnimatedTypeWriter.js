@@ -14,10 +14,10 @@ const AnimatedTypeWriter = ({ text, animationDelay = 0.1 }) => {
   }
 
   return (
-    <section className="w-full flex items-center justify-center h-[30vh] md:h-[50vh] overflow-hidden">
+    <section className="w-full flex items-center justify-center py-20 overflow-hidden">
       <div className="container w-full px-6 sm:px-10 md:px-10 text-center">
         <motion.h2
-          className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold whitespace-normal ${
+          className={`text-lg sm:text-3xl md:text-4xl xl:text-5xl font-bold whitespace-normal ${
             isDarkMode ? "text-white" : "text-black"
           }`}
         >

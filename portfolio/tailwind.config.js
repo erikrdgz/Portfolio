@@ -28,6 +28,14 @@ module.exports = {
           dark: "#E2E8F0",
         },
       },
+      fontSize: {
+        "10xl": "10.5rem", // 168px
+        "11xl": "13rem",   // 208px
+        "12xl": "16rem",   // 256px
+        "13xl": "20rem",   // 320px
+        "14xl": "25rem",   // 400px
+        "15xl": "31rem",   // 496px
+      },
       transitionProperty: {
         colors: "background-color, color, fill", // Ensure smooth transition for fill changes
       },

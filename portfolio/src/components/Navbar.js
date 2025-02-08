@@ -8,6 +8,7 @@ import { IoMdMenu } from "react-icons/io";
 import { VscClose } from "react-icons/vsc";
 
 import { ReactComponent as LogoSvg } from "../assets/images/logo.svg";
+import AnimatedLink from "./animation/AnimatedLink";
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar open state
@@ -47,30 +48,28 @@ const Navbar = () => {
                 <div className="px-4 pt-2 flex justify-between items-center relative">
                     <Link to="/" className="text-3xl font-bold ml-2">
                         <LogoSvg
-                            className="h-10 w-10"
+                            className={`${isMobile ? "h-5 w-5" : "h-8 w-8"} `}
                             style={{ fill: isDarkMode ? "white" : "black" }}
                         />
                     </Link>
-                    <p className="absolute left-1/2 transform -translate-x-1/2 hidden md:block text-md">
+                    <a href="/" className="absolute left-1/2 transform -translate-x-1/2 hidden md:block text-md">
                         Erik Rodriguez Portfolio
-                    </p>
+                    </a>
                     <div className="flex items-center space-x-4 ml-auto">
                         <motion.button
-                            className={`${
-                                isDarkMode ? "hover:bg-neutral-800" : "hover:bg-white"
-                            } p-2 rounded-md hover:shadow-lg transition-shadow duration-500`}
+                            className={`${isDarkMode ? "hover:bg-neutral-800" : "hover:bg-white"
+                                } p-2 rounded-md hover:shadow-lg transition-shadow duration-500`}
                             onClick={toggleDarkMode}
                             whileTap={{ scale: 0.6 }}
                         >
-                            {isDarkMode ? <CiBrightnessDown size={30} /> : <CiCloudMoon size={30} />}
+                            {isDarkMode ? <CiBrightnessDown size={isMobile ? 24 : 30} /> : <CiCloudMoon size={isMobile ? 24 : 30} />}
                         </motion.button>
                         <button
-                            className={`${
-                                isDarkMode ? "hover:bg-neutral-800" : "hover:bg-white"
-                            } p-2 rounded-md hover:shadow-lg transition-shadow duration-500`}
+                            className={`${isDarkMode ? "hover:bg-neutral-800" : "hover:bg-white"
+                                } p-2 rounded-md hover:shadow-lg transition-shadow duration-500`}
                             onClick={toggleSidebar}
                         >
-                            <IoMdMenu size={30} />
+                            <IoMdMenu size={isMobile ? 24 : 30} />
                         </button>
                     </div>
                 </div>
@@ -78,13 +77,16 @@ const Navbar = () => {
 
             {/* Sidebar */}
             <motion.div
-                className={`fixed top-0 right-0 h-full z-[20] shadow-lg overflow-hidden ${
-                    isDarkMode ? "bg-neutral-950 text-white" : "bg-white text-black"
-                }`}
-                initial={{ x: "100%" }}
-                animate={{ x: isSidebarOpen ? 0 : "100%" }}
+                className={`fixed top-0 right-0 h-full z-[20] shadow-lg overflow-hidden ${isDarkMode ? "bg-neutral-950 text-white" : "bg-white text-black"
+                    }`}
+                    initial={{ x: isMobile ? 0 : "100%", y: isMobile ? "-100%" : 0 }} 
+                    animate={{ x: isMobile ? 0 : (isSidebarOpen ? 0 : "100%"), y: isMobile ? (isSidebarOpen ? 0 : "-100%") : 0 }} 
                 transition={{ type: "spring", stiffness: 200, damping: 30 }}
-                style={{ width: isMobile ? "100vw" : "25vw" }}
+                style={{
+                    width: isMobile ? "100vw" : "18vw",
+                    top: isMobile ? "0" : "0", // Ensure correct positioning
+                    right: isMobile ? "0" : "0", // Right side for desktop
+                  }}
             >
                 <button
                     className="absolute top-4 right-4 text-3xl"
@@ -92,9 +94,9 @@ const Navbar = () => {
                 >
                     <VscClose />
                 </button>
-                <div className="flex flex-col text-center justify-between h-full mt-12">
+                <div className="flex flex-col text-left justify-between px-10 lg:px-14 h-full mt-12">
                     <motion.div
-                        className="space-y-4 h-full flex flex-col justify-evenly"
+                        className="space-y-1 h-full flex flex-col "
                         initial="hidden"
                         animate={isSidebarOpen ? "visible" : "hidden"}
                         variants={{
@@ -102,50 +104,41 @@ const Navbar = () => {
                             visible: { opacity: 1 },
                         }}
                         transition={{
-                            staggerChildren: 0.1,
+                            staggerChildren: 0.09,
                             duration: 0.5,
-                            ease: "easeInOut",
+                            ease: "easeOut",
                         }}
                     >
-                        {/* Menu Links */}
+                        {/* Case Study Links */}
                         {[
                             { path: "/", label: "Home" },
                             { path: "/about", label: "About" },
-                            { path: "/Koopid", label: "Work" },
+                            { path: "/koopid", label: "Koopid" },
+                            { path: "/dialpad", label: "Dialpad" },
+                            { path: "/nsls", label: "NSLS" },
                             { path: "/designs", label: "Designs" },
                         ].map(({ path, label }) => (
                             <motion.div
                                 key={label}
                                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                                className="py-1"
                             >
-                                <Link
+                                {/* <Link
                                     to={path}
-                                    className={`py-6 text-2xl font-semibold transition-all duration-300 ${
-                                        isDarkMode
-                                            ? "hover:[text-shadow:0_0_10px_#ffffff,0_0_20px_#ffffff]"
-                                            : "hover:[text-shadow:0_0_2px_#e4e4e4,0_0_4px_#e4e4e4]"
-                                    }`}
+                                    className={` text-xl  transition-all duration-300 hover:text-orange-500  ${isDarkMode ? "text-white" : "text-black"
+                                        }`}
                                     onClick={() => setIsSidebarOpen(false)}
                                 >
                                     {label}
-                                </Link>
+                                </Link> */}
+
+                                <AnimatedLink onClick={() => setIsSidebarOpen(false)} route={path} title={label} />
                             </motion.div>
                         ))}
-                        <motion.div
-                            className={`${
-                                isDarkMode ? "text-orange-500" : "text-orange-500"
-                            }`}
-                            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                        >
-                            <button
-                                className={`my-2 py-3 px-6 text-2xl rounded-full bg-transparent text-orange-500 transition-all duration-300`}
-                            >
-                                Let's Chat
-                            </button>
-                        </motion.div>
                     </motion.div>
                 </div>
             </motion.div>
+
         </>
     );
 };

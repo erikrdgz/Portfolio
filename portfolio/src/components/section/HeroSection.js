@@ -23,26 +23,27 @@ const HeroSection = () => {
           <div className="flex md:justify-center items-center md:items-end">
             <motion.div
               className="flex items-start md:items-end justify-center md:justify-start pb-9 md:pb-0"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
             >
               <h1
                 className={`${isDarkMode ? "text-white" : "text-black"} font-bold text-6xl md:text-7xl xl:text-9xl`}
               >
+                {/* "Product" */}
                 <motion.span
-                  initial={{ clipPath: "inset(0 100% 0 0)" }}
-                  animate={{ clipPath: "inset(0 0 0 0)" }}
+                  initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
+                  animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
                   style={{ willChange: "clip-path" }}
-                  
                 >
                   Product
                 </motion.span>
                 <br />
+                {/* "Designer" */}
                 <motion.span
-                  initial={{ clipPath: "inset(0 100% 0 0)" }}
-                  animate={{ clipPath: "inset(0 0 0 0)" }}
+                  initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
+                  animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
                   transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
                   style={{ willChange: "clip-path" }}
                   className="text-orange-500"
@@ -54,23 +55,21 @@ const HeroSection = () => {
           </div>
 
           {/* Right Column - Paragraph */}
-          <div className="flex justify-center items-end md:justify-start md:items-end  md:mt-0">
-            <div className="w-full 4 md:w-10/12">
+          <div className="flex justify-center items-end md:justify-start md:items-end md:mt-0">
+            <div className="w-full md:w-10/12">
               <motion.p
                 className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-lg md:text-md lg:text-md xl:text-xl`}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: window.innerWidth < 768 ? 20 : -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.9 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
                 style={{ lineHeight: "1.8" }}
               >
-                Welcome! I'm Erik, a product designer based in{" "}
-                <span className={`line-through ${isDarkMode ? "text-neutral-400" : "text-neutral-800"}`}>Chicago</span>{" "}
-                Denver,
-                focused on creating designs that help people efficiently utilize digital products and enjoy them.
+                Welcome! I'm Erik, a product designer based in Denver, focused on creating designs that help people efficiently utilize digital products and enjoy them.
               </motion.p>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -32,20 +32,20 @@ const HeroSection = () => {
               >
                 {/* "Product" */}
                 <motion.span
-                  initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
-                  animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
-                  transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
-                  style={{ willChange: "clip-path" }}
+                  // initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
+                  // animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
+                  // transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+                  // style={{ willChange: "clip-path" }}
                 >
                   Product
                 </motion.span>
                 <br />
                 {/* "Designer" */}
                 <motion.span
-                  initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
-                  animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
-                  transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                  style={{ willChange: "clip-path" }}
+                  // initial={window.innerWidth >= 768 ? { clipPath: "inset(0 100% 0 0)" } : { y: -20 }}
+                  // animate={window.innerWidth >= 768 ? { clipPath: "inset(0 0 0 0)" } : { y: -10 }}
+                  // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+                  // style={{ willChange: "clip-path" }}
                   className="text-orange-500"
                 >
                   Designer

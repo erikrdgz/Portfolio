@@ -26,7 +26,7 @@ const HeroSection = () => {
               className="flex items-start md:items-end justify-center md:justify-start pb-9 md:pb-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+              transition={{ duration: 0.7, delay: 1.2 }}
             >
               <h1
                 className={`${isDarkMode ? "text-white" : "text-black"} font-bold text-6xl md:text-7xl xl:text-9xl`}
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <motion.span
                   initial={{ clipPath: "inset(0 100% 0 0)" }}
                   animate={{ clipPath: "inset(0 0 0 0)" }}
-                  transition={{ duration: 1, ease: "easeOut" }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 1.4 }}
                   style={{ willChange: "clip-path" }}
                   
                 >
@@ -44,7 +44,7 @@ const HeroSection = () => {
                 <motion.span
                   initial={{ clipPath: "inset(0 100% 0 0)" }}
                   animate={{ clipPath: "inset(0 0 0 0)" }}
-                  transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                  transition={{ duration: 1, delay: 1.6, ease: "easeOut" }}
                   style={{ willChange: "clip-path" }}
                   className="text-orange-500"
                 >
@@ -61,7 +61,7 @@ const HeroSection = () => {
                 className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-lg md:text-md lg:text-md xl:text-xl`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 1 }}
+                transition={{ duration: 0.7, delay: 1.9 }}
                 style={{ lineHeight: "1.8" }}
               >
                 Welcome! I'm Erik, a product designer based in{" "}

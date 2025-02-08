@@ -3,7 +3,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence
 import CircleButton from "../buttons/CircleButton";
 import { useDarkMode } from "../../DarkModeContext";
-import transition from "../../transitions";
+// import transition from "../../transitions";
 import SplineViewer from "../SplineViewer";
 import AnimatedNumber from "../animation/AnimatedNumber"; // Import the AnimatedNumber component
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -195,4 +195,4 @@ const ExpandableCaseStudyCard = React.memo(({
     );
 });
 
-export default transition(ExpandableCaseStudyCard);
+export default ExpandableCaseStudyCard;

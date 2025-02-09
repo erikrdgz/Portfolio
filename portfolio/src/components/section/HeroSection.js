@@ -24,6 +24,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
+              layout
             >
               <h1
                 className={`${isDarkMode ? "text-white" : "text-black"} font-bold text-6xl md:text-7xl xl:text-9xl`}
@@ -53,6 +54,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
                 style={{ lineHeight: "1.8" }}
+                layout
               >
                 Welcome! I'm Erik, a product designer based in Denver, focused on creating designs that help people efficiently utilize digital products and enjoy them.
               </motion.p>

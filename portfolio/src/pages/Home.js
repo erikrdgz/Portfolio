@@ -40,7 +40,7 @@ const Home = () => {
             className={`${isDarkMode ? "bg-black text-white" : "bg-white text-black"} min-h-screen flex flex-col transition-colors duration-500`}
         >
             {/* Wrap the page content in AnimatePresence */}
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
                 <motion.div
                     key={location.pathname} // Ensure key is dynamic with the pathname
                     initial="hidden"

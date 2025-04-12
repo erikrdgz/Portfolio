@@ -82,7 +82,7 @@ const ExpandableCaseStudyCard = React.memo(({
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
                             className={`${isDarkMode ? "text-gray-300" : "text-gray-700"
-                                } text-sm md:text-base lg:text-xl mt-8 mb-4 md:mb-4 lg:mb-4 leading-loose transition-colors duration-500`}
+                                } text-lg md:text-base lg:text-xl mt-8 mb-4 md:mb-4 lg:mb-4 leading-loose transition-colors duration-500`}
                         >
                             {company}
                         </motion.p>
@@ -96,39 +96,39 @@ const ExpandableCaseStudyCard = React.memo(({
                         >
                             {title}
                         </motion.h2>
+                       
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+                            className={`${isDarkMode ? "text-gray-300" : "text-gray-700"
+                                } text-sm md:text-sm lg:text-xl xl:text-xl mb-8 md:mb-6 lg:mb-8 leading-loose transition-colors duration-500`}
+                        >
+                            {description}
+                        </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
+                            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
                             className="mb-6 flex flex-wrap gap-2"
                         >
                             {chips.map((chip, index) => (
                                 <span
                                     key={index}
                                     className={`${isDarkMode ? "text-gray-300" : "text-gray-700"
-                                        } pr-4 py-2 text-md  lg:text-sm transition-colors duration-500`}
+                                        } pr-4 py-2 text-sm  lg:text-sm transition-colors duration-500`}
                                 >
                                     {chip}
                                 </span>
                             ))}
                         </motion.div>
-                        <motion.p
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
-                            className={`${isDarkMode ? "text-gray-300" : "text-gray-700"
-                                } text-sm md:text-sm lg:text-xl xl:text-xl mb-8 md:mb-6 lg:mb-8 leading-loose transition-colors duration-500`}
-                        >
-                            {description}
-                        </motion.p>
-                        
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 }}
+                            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                             className="flex gap-4"
                         >
                             <button

@@ -21,10 +21,7 @@ const HeroSection = () => {
           <div className="flex md:justify-center items-center md:items-end">
             <motion.div
               className="flex items-start md:items-end justify-center md:justify-start pb-9 md:pb-0"
-              // initial={{ opacity: 0, y: 20 }}
-              // animate={{ opacity: 1, y: 0 }}
-              // transition={{ duration: 0.7, delay: 1 }}
-              // layout
+         
             >
               <h1
                 className={`${isDarkMode ? "text-white" : "text-black"} font-bold text-6xl md:text-7xl xl:text-9xl`}
@@ -50,13 +47,9 @@ const HeroSection = () => {
             <div className="w-full md:w-10/12">
               <motion.p
                 className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-lg md:text-md lg:text-md xl:text-xl`}
-                // initial={{ opacity: 0, y:  -20 }}
-                // animate={{ opacity: 1, y: 0 }}
-                // transition={{ duration: 0.7, delay: 1.2 }}
-                // style={{ lineHeight: "1.8" }}
-                // layout
+              
               >
-                Welcome! I'm Erik, a product designer based in Denver, focused on creating designs that help people efficiently utilize digital products and enjoy them.
+                Welcome, I’m Erik a product designer passionate about blending user experience, thoughtful design, and innovative solutions. Based in Denver, I focus on crafting digital products that are both intuitive to use and a joy to engage with, whether as a designer, strategist, or leader.
               </motion.p>
             </div>
           </div>

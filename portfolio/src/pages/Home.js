@@ -87,31 +87,30 @@ const Home = () => {
 
                     {/* Case Study Cards */}
                     <section className="px-2 md:px-2 lg:px-9">
-                        <ExpandableCaseStudyCard
+                    <ExpandableCaseStudyCard
                             isDarkMode={isDarkMode}
-                            mobileImg={isDarkMode ? KoopidImage: KoopidImageLight}
-                            // divColor="#004C84"
+                            mobileImg={isDarkMode ? nslsImage: nslsImageLight}
                             divColor={isDarkMode ? "#0a0a0a" : "#fff"}
-                            company="Koopid"
-                             href="/Koopid"
-                             projectName="Redesign"
-                            splineUrl="https://my.spline.design/iphone14procopy-8670d31454ba5292b39464d8bcf198b4/"
-                            title="Unifying a product suite into a cohesive experience, landing an acquisition"
-                            description="An AI company in the telecommunication space needed help establishing a cohesive design, branding, and a smooth user experience across their product line."
+                            company="NSLS"
+                            href="/Nsls"
+                            projectName="Mobile App"
+                            splineUrl="https://my.spline.design/nslscopy-31a173977968de5bf31d3727eba973a1/"
+                            title="Creating an exciting community feature for higher education"
+                            description="Post-course peer engagement was nearly nonexistent students completed modules but skipped meaningful community interaction. We tackled this by designing a mobile app that made engagement feel natural, accessible, and social, turning passive posts into real peer connection."
                             detailedDescription="A detailed description that explains the full case study."
-                            chips={['Lead UX Designer & Developer',  '6 Months', 'AI Telecommunications']}
-                            buttonLink="/Koopid"
-                            className="duration-500 transition-colors"
-                            number1={35} // Animated number
-                            paragraph1="Reduction in decision-making time"
+                            chips={['Senior Product Designer', '8 Months', 'Higher Education Technology']}
+                            buttonLink="/Nsls"
+                            number1={75} // Animated number
+                            paragraph1="Of users had transitioned to the mobile app"
                             isPercentage1={true} // Display as percentage
-                            number2={25} // Animated number
-                            paragraph2="Increase in user satisfaction scores"
+                            number2={41} // Animated number
+                            paragraph2="Forum activity surge"
                             isPercentage2={true} // Display as regular number
-                            number3={54} // Animated number
-                            paragraph3="Increasing user testing feedback efficiency"
+                            number3={62} // Animated number
+                            paragraph3="Course completion rates"
                             isPercentage3={true} // Display as regular number
                         />
+                       
 
                         <ExpandableCaseStudyCard
                             isDarkMode={isDarkMode}
@@ -119,10 +118,10 @@ const Home = () => {
                             divColor={isDarkMode ? "#0a0a0a" : "#fff"}
                             company="Dialpad"
                              href="/Dialpad"
-                             projectName="Merger"
+                             projectName="Design Unification"
                             splineUrl="https://my.spline.design/studiodisplaymockup-9508385c4955206e0e3bd5c0de3013f9/"
-                            title="Merging an existing product into a comprehensive product suite"
-                            description="After a successful aquisition, Dialpad needed to bring in Koopid's robust products into their suite while avoiding technical debt and seamlessly integrating both user experiences, that's where I stepped in."
+                            title="Unifying Experiences at Scale"
+                            description="Tasked with integrating Koopid’s robust tools into Dialpad’s platform, I reimagined the UX and design system to transform multiple standalone products into a cohesive, scalable suite—bridging two ecosystems without compromising usability or speed."
                             detailedDescription="A detailed description that explains the full case study."
                             chips={['Product Designer', '4 Months', 'A.I. & Video Conference Technology']}
                             buttonLink="/Dialpad"
@@ -138,27 +137,31 @@ const Home = () => {
                         />
 
 
-                        <ExpandableCaseStudyCard
+                       
+
+<ExpandableCaseStudyCard
                             isDarkMode={isDarkMode}
-                            mobileImg={isDarkMode ? nslsImage: nslsImageLight}
+                            mobileImg={isDarkMode ? KoopidImage: KoopidImageLight}
+                            // divColor="#004C84"
                             divColor={isDarkMode ? "#0a0a0a" : "#fff"}
-                            company="NSLS"
-                            href="/Nsls"
-                            projectName="User Journey"
-                            splineUrl="https://my.spline.design/nslscopy-31a173977968de5bf31d3727eba973a1/"
-                            title="Creating an exciting community feature for higher education"
-                            description="Membership dropoff is not to be taken lightly, so by adding a community feature to coincide with users' need to connect, we revitalized a lacking feature that turned into one of the more succesfull usages of the app."
+                            company="Koopid"
+                             href="/Koopid"
+                             projectName="Comprehensive Design"
+                            splineUrl="https://my.spline.design/iphone14procopy-8670d31454ba5292b39464d8bcf198b4/"
+                            title="Crafting Cohesion That Drove Acquisition"
+                            description="Led the end-to-end design unification of a multi-product AI platform in the telecom space aligning branding, UX, and interaction patterns to create a seamless experience that ultimately helped position the company for acquisition."
                             detailedDescription="A detailed description that explains the full case study."
-                            chips={['Senior Product Designer', '8 Months', 'Higher Education Technology']}
-                            buttonLink="/Nsls"
-                            number1={75} // Animated number
-                            paragraph1="Of users had transitioned to the mobile app"
+                            chips={['Lead UX Designer & Developer',  '6 Months', 'AI Telecommunications']}
+                            buttonLink="/Koopid"
+                            className="duration-500 transition-colors"
+                            number1={35} // Animated number
+                            paragraph1="Reduction in decision-making time"
                             isPercentage1={true} // Display as percentage
-                            number2={41} // Animated number
-                            paragraph2="Forum activity surge"
+                            number2={25} // Animated number
+                            paragraph2="Increase in user satisfaction scores"
                             isPercentage2={true} // Display as regular number
-                            number3={62} // Animated number
-                            paragraph3="Course completion rates"
+                            number3={54} // Animated number
+                            paragraph3="Increasing user testing feedback efficiency"
                             isPercentage3={true} // Display as regular number
                         />
                     </section>

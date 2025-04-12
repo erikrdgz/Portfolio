@@ -3,15 +3,28 @@ import { useDarkMode } from "../../DarkModeContext";
 
 const skills = [
   {
-    title: "Design",
+    title: "Design Strategy",
+    items: [
+      "Design Systems",
+      "UX Strategy",
+      "UI/UX Design",
+      "User Research",
+      "Interaction Design",
+      "DesignOps",
+      "Prototyping & Testing",
+    ],
+  },
+  {
+    title: "Design Tools",
     items: [
       "Figma",
+      "Sketch",
       "Photoshop",
       "Illustrator",
-      "Webflow",
-      "WordPress",
       "Framer",
       "InDesign",
+      "Webflow",
+      "WordPress",
     ],
   },
   {
@@ -19,26 +32,28 @@ const skills = [
     items: [
       "HTML",
       "CSS",
-      "JS",
+      "JavaScript",
       "React",
-      "PHP",
       "Tailwind",
+      "Wordpress",
+      "PHP",
       "Git",
     ],
   },
   {
     title: "Experience",
     items: [
-      "7+ Years of experience",
+      "7+ Years of Experience",
       "SaaS",
-      "B2B",
-      "B2C",
+      "B2B & B2C",
       "Telecommunications",
       "Artificial Intelligence",
       "EdTech",
+      "Agile Teams",
     ],
   },
 ];
+
 
 export default function SkillsSection() {
   const { isDarkMode } = useDarkMode();
@@ -46,7 +61,7 @@ export default function SkillsSection() {
   return (
     <section className="flex flex-col items-center  gap-12 px-6 lg:h-[50vh]">
       {/* Skills Columns (Responsive Grid) */}
-      <div className="grid grid-cols-2 md:grid-cols-3 items-center  gap-4 md:gap-6 lg:gap-8 w-full max-w-screen-lg mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 items-start  gap-4 md:gap-6 lg:gap-8 w-full max-w-screen-lg mx-auto">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.title}

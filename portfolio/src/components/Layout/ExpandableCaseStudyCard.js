@@ -82,7 +82,7 @@ const ExpandableCaseStudyCard = React.memo(({
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
                             className={`${isDarkMode ? "text-gray-300" : "text-gray-700"
-                                } text-lg md:text-base lg:text-xl mt-8 mb-4 md:mb-4 lg:mb-4 leading-loose transition-colors duration-500`}
+                                } text-lg md:text-base lg:text-2xl mt-8 mb-4 md:mb-4 lg:mb-4 leading-loose transition-colors duration-500`}
                         >
                             {company}
                         </motion.p>

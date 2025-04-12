@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useDarkMode } from "../DarkModeContext";
 import transition from "../transitions";
 import me from "../assets/images/Erik-about.png";
-import resume from "../assets/Resume.docx";
+import resume from "../assets/Resume-2025.pdf";
 
 const About = () => {
     const { isDarkMode } = useDarkMode();

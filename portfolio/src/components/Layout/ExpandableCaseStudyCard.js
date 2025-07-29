@@ -82,7 +82,7 @@ const ExpandableCaseStudyCard = React.memo(({
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
-                            className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"
+                            className={`${isDarkMode ? "text-neutral-200" : "text-neutral-800"
                                 } text-lg md:text-base lg:text-2xl mt-8 mb-4 md:mb-4 lg:mb-4 leading-loose transition-colors duration-500`}
                         >
                             {company}
@@ -137,21 +137,29 @@ const ExpandableCaseStudyCard = React.memo(({
                         >
                             <GlassmorphicButton
                                 isDarkMode={isDarkMode}
-                                onClick={toggleExpand}
+                                onClick={(e) => {
+                                    toggleExpand();
+                                    e.currentTarget.blur();
+                                }}
                                 className="mx-0"
-                            >
+                                >
                                 {isExpanded ? (
-                                    <span className={`${isDarkMode ? "text-cyan-300" : "text-cyan-400"}`}>
-                                        Close{" "}
-                                        <RiArrowDropDownLine className="inline text-3xl -rotate-180" />
+                                    <span className={isDarkMode ? "text-cyan-300" : "text-cyan-400"}>
+                                    Close{" "}
+                                    <RiArrowDropDownLine
+                                        className="inline text-3xl transition-transform duration-300 -rotate-180"
+                                    />
                                     </span>
                                 ) : (
-                                    <span className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"}`}>
-                                        At a glance{" "}
-                                        <RiArrowDropDownLine className="inline text-3xl" />
+                                    <span className={isDarkMode ? "text-cyan-400" : "text-cyan-400"}>
+                                    At a glance{" "}
+                                    <RiArrowDropDownLine
+                                        className="inline text-3xl transition-transform duration-300 rotate-0"
+                                    />
                                     </span>
                                 )}
                             </GlassmorphicButton>
+
                             <div className="flex items-center mx-auto justify-center">
                                 <CircleButton href={buttonLink} />
                             </div>

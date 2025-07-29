@@ -16,6 +16,7 @@ import SkillsSection from "../components/section/SkillsSection";
 import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
 
 import LatestWorkSection from "../components/section/LatestWorkSection";
+import GlassSurface from "../components/surface/GlassSurface";
 
 const Home = () => {
   const { isDarkMode } = useDarkMode();
@@ -63,8 +64,7 @@ const Home = () => {
             <HeroSection isDarkMode={isDarkMode} />
             <SkillsSection isDarkMode={isDarkMode} />
 
-           <LatestWorkSection />
-
+            <LatestWorkSection />
 
             <section className="px-2 md:px-2 lg:px-9">
               <MemoizedCaseStudyCard
@@ -152,13 +152,16 @@ const Home = () => {
                 isPercentage3={true}
               />
             </section>
+            <section className="py-48">
+              <AnimatedTypeWriter
+                text=" COMPANIES I WORKED WITH"
+                isDarkMode={isDarkMode}
+                animationDelay={0.08}
+              />
+              <Banner />
+            </section>
 
-            <AnimatedTypeWriter
-              text=" COMPANIES I WORKED WITH"
-              isDarkMode={isDarkMode}
-              animationDelay={0.08}
-            />
-            <Banner />
+
           </motion.div>
         </AnimatePresence>
       </div>

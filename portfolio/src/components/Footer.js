@@ -14,8 +14,8 @@ const Footer = () => {
 
   return (
     <footer
-      className={`${isDarkMode ? " text-white border-neutral-900" : " text-black"
-        } border-t-2 py-16 px-6 mt-auto transition-colors duration-500 w-full`}
+      className={`${isDarkMode ? " text-white border-neutral-500" : " text-black"
+        } border-t py-16 px-6 mt-auto transition-colors duration-500 w-full`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 space-y-6">
         {/* Left Section (Copyright & Contact) */}

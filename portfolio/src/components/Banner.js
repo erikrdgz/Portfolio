@@ -9,6 +9,7 @@ import techtonicLogo from "../assets/images/logos/techtonic-logo.png";
 import ifccLogo from "../assets/images/logos/ifcc-logo.png";
 import koopidLogo from "../assets/images/logos/koopid-logo.png";
 
+
 const Banner = () => {
   const { isDarkMode } = useDarkMode();
 
@@ -47,28 +48,23 @@ const Banner = () => {
 
   return (
     <motion.div
-      className={`banner-container ${
-        isDarkMode ? "" : ""
-      } transition-colors duration-500`}
-      style={{ padding: "20px 0" }}
+      className={`banner-container transition-colors duration-500 py- px-8`}
+      style={{ padding: "" }}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% is visible
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <motion.div
-        className={`grid lg:grid-cols-6 grid-cols-2 gap-4 py-12 lg:py-20 items-center justify-center ${
+        className={`grid lg:grid-cols-3 grid-cols-2 gap-4 py-12 lg:py-20 items-center justify-center ${
           isDarkMode ? "text-white" : "text-black"
         }`}
       >
         {logos.map((logo, index) => (
           <motion.div
             key={index}
-            className="flex items-center justify-center py-6"
-            style={{
-              margin: "auto",
-            }}
-            variants={itemVariants} // Attach the item animation
+            className="flex items-center justify-center h-40 md:h-64 p-4 rounded-lg backdrop-blur-md bg-white/10 dark:bg-white/5 shadow-md transition-all"
+            variants={itemVariants}
           >
             <img
               src={logo}

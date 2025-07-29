@@ -32,17 +32,17 @@ const SplineViewer = ({ splineUrl, imageUrl, href, projectName }) => {
         </div>
       ) : (
         // Original link for tablet and up
-        <div
-          className="absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg bg-cyan-400"
-          
-        >
-          <a
-            href={href}
-            className="flex items-center gap-2 text-white hover:scale-110 transition-transform duration-300 z-40 w-full h-full font-bold  justify-center "
-          >
-            Explore <HiMiniArrowUpRight className="stroke-[1]"/>
-          </a>
-        </div>
+       <div
+  className="absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-full bg-cyan-400 transition-shadow duration-300 shadow-[0_4px_12px_rgba(34,211,238,0.5)] hover:shadow-[0_2px_6px_rgba(34,211,238,0.25)]"
+>
+  <a
+    href={href}
+    className="flex items-center gap-2 text-white transition-transform duration-300 z-40 w-full h-full font-bold justify-center"
+  >
+    Explore <HiMiniArrowUpRight className="stroke-[1]" />
+  </a>
+</div>
+
       )}
 
       {/* Spline Viewer for Larger Screens */}

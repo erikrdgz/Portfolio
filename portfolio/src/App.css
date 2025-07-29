@@ -326,3 +326,53 @@ h3 {
   -webkit-backdrop-filter: blur(9px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.glass-card--frosted {
+  background: rgba(255, 255, 255, 0.15); /* More visible white */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset 0 0 0.5px rgba(255, 255, 255, 0.2),
+    0 4px 20px rgba(0, 0, 0, 0.1); /* Softer, deeper drop shadow */
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.glass-card--frosted-dark {
+  background: rgba(18, 18, 18, 0.6); /* Deep translucent black */
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 0 0.5px rgba(255, 255, 255, 0.03),
+    0 4px 20px rgba(0, 0, 0, 0.35);
+
+  color: white; /* Ensures legibility for text inside */
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+
+.glass-button {
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+}
+
+.glass-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.15), /* subtle NW light */
+    inset -1px -1px 2px rgba(0, 0, 0, 0.05);     /* subtle SE shadow */
+}
+
+.glass-button:hover::before {
+  opacity: 1;
+}

@@ -99,10 +99,14 @@ const HeroSection = () => {
                 <span className="text-sm mt-4 flex items-center gap-1">
                   Fun fact — I coded this with React{" "}
                   <motion.span
-                    animate={isMobile ? undefined : { rotate: 360 }}
+                    animate={isMobile ? { rotate: 360 } : { rotate: 360 }}
                     transition={
                       isMobile
-                        ? undefined
+                        ? {
+                            repeat: Infinity,
+                            duration: 2,
+                            ease: "linear",
+                          }
                         : {
                             repeat: Infinity,
                             duration: 2,

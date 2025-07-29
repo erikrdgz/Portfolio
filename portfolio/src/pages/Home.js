@@ -1,14 +1,7 @@
-import React, { useEffect, useRef, memo, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useRef, memo } from "react";
+import { useLocation } from "react-router-dom";
 import { useDarkMode } from "../DarkModeContext";
-import {
-  motion,
-  AnimatePresence,
-  useAnimation,
-  useInView,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
 
 import Banner from "../components/Banner";
 import ExpandableCaseStudyCard from "../components/Layout/ExpandableCaseStudyCard";
@@ -22,30 +15,12 @@ import HeroSection from "../components/section/HeroSection";
 import SkillsSection from "../components/section/SkillsSection";
 import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
 
-import sand from "../assets/images/sand.jpg";
-import sandLight from "../assets/images/sand-light.png";
-
-// Utility hook to detect mobile
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" ? window.innerWidth < breakpoint : false
-  );
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < breakpoint);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [breakpoint]);
-  return isMobile;
-}
-
 const Home = () => {
   const { isDarkMode } = useDarkMode();
   const location = useLocation();
   const heroControls = useAnimation();
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { threshold: 0.5 });
-
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isHeroInView) {
@@ -54,15 +29,6 @@ const Home = () => {
       heroControls.start("hidden");
     }
   }, [isHeroInView, heroControls]);
-
-  const latestWorkRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: latestWorkRef,
-    offset: ["start end", "end start"],
-  });
-
-  const latestX = useTransform(scrollYProgress, [0, 0.5], ["-100vw", "0vw"]);
-  const workX = useTransform(scrollYProgress, [0, 0.5], ["100vw", "0vw"]);
 
   const desktopSectionRef = useRef(null);
   const isDesktopInView = useInView(desktopSectionRef, {
@@ -79,13 +45,6 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Fixed background */}
-      <div
-        className="  t"
-        
-      />
-
-      {/* Foreground content */}
       <div
         className={`relative z-10 ${
           isDarkMode ? "text-white" : "text-black"
@@ -103,61 +62,42 @@ const Home = () => {
             <HeroSection isDarkMode={isDarkMode} />
             <SkillsSection isDarkMode={isDarkMode} />
 
-            {/* Latest Work - Mobile */}
             <section
-              ref={latestWorkRef}
-              className="w-full flex items-center justify-center h-[30vh] md:h-[50vh] overflow-hidden md:hidden"
-              aria-labelledby="latest-work-heading-mobile"
-            >
-              <div className="container w-full px-6 sm:px-10 md:px-10 text-center">
-                <motion.h2
-                  id="latest-work-heading-mobile"
-                  className="text-4xl font-bold text-cyan-400 whitespace-nowrap flex justify-center gap-4 w-full select-none"
-                  style={{ lineHeight: 1.1 }}
-                >
-                  <motion.span style={{ x: latestX }}>LATEST</motion.span>
-                  <motion.span style={{ x: workX }}>WORK</motion.span>
-                </motion.h2>
-              </div>
-            </section>
+  className="w-full h-[30vh] md:h-[50vh] overflow-hidden block py-8 flex items-center justify-center"
+  aria-labelledby="latest-work-heading-desktop"
+>
+  <div className="container w-full px-6 sm:px-10 md:px-10 text-center">
+    <motion.h2
+      id="latest-work-heading-desktop"
+      ref={desktopSectionRef}
+      className="text-4xl md:text-7xl xl:text-9xl font-bold text-cyan-400 whitespace-nowrap flex justify-center gap-4 md:gap-8 w-full select-none"
+      style={{ lineHeight: 1.1 }}
+    >
+      <motion.span
+        animate={
+          isDesktopInView
+            ? { opacity: 1, x: 0 }
+            : { opacity: 0, x: "-10vw" }
+        }
+        transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
+      >
+        LATEST
+      </motion.span>
+      <motion.span
+        animate={
+          isDesktopInView
+            ? { opacity: 1, x: 0 }
+            : { opacity: 0, x: "10vw" }
+        }
+        transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
+      >
+        WORK
+      </motion.span>
+    </motion.h2>
+  </div>
+</section>
 
-            {/* Latest Work - Desktop */}
-            <section
-              className="w-full h-[30vh] md:h-[50vh] overflow-hidden hidden md:block"
-              aria-labelledby="latest-work-heading-desktop"
-            >
-              <div className="container w-full px-6 sm:px-10 md:px-10 text-center">
-                <motion.h2
-                  id="latest-work-heading-desktop"
-                  ref={desktopSectionRef}
-                  className="text-4xl md:text-7xl xl:text-9xl font-bold text-cyan-400 whitespace-nowrap flex justify-center gap-4 md:gap-8 w-full select-none"
-                  style={{ lineHeight: 1.1 }}
-                >
-                  <motion.span
-                    animate={
-                      isDesktopInView
-                        ? { opacity: 1, x: 0 }
-                        : { opacity: 0, x: "-10vw" }
-                    }
-                    transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                  >
-                    LATEST
-                  </motion.span>
-                  <motion.span
-                    animate={
-                      isDesktopInView
-                        ? { opacity: 1, x: 0 }
-                        : { opacity: 0, x: "10vw" }
-                    }
-                    transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                  >
-                    WORK
-                  </motion.span>
-                </motion.h2>
-              </div>
-            </section>
 
-            {/* Case Studies */}
             <section className="px-2 md:px-2 lg:px-9">
               <MemoizedCaseStudyCard
                 isDarkMode={isDarkMode}

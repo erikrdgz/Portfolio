@@ -3,6 +3,7 @@ import sand from "../../assets/images/sand.jpg";
 import sandLight from "../../assets/images/sand-light.png";
 import { useDarkMode } from "../../DarkModeContext";
 
+
 const HeroSection = () => {
   const { isDarkMode } = useDarkMode();
 
@@ -14,6 +15,9 @@ const HeroSection = () => {
       }}
     >
 
+
+     
+
       {/* Content */}
       <div className="flex items-center justify-center w-full h-full overflow-hidden px-9">
         <div className="w-full md:grid md:grid-cols-2 md:gap-8">
@@ -21,7 +25,7 @@ const HeroSection = () => {
           <div className="flex md:justify-center items-center md:items-end">
             <motion.div
               className="flex items-start md:items-end justify-center md:justify-start pb-9 md:pb-0"
-         
+
             >
               <h1
                 className={`${isDarkMode ? "text-white" : "text-black"} font-bold text-6xl md:text-7xl xl:text-9xl`}
@@ -34,7 +38,7 @@ const HeroSection = () => {
                 <br />
                 {/* "Designer" */}
                 <span
-                  className="text-orange-500"
+                  className="text-cyan-400"
                 >
                   Designer
                 </span>
@@ -47,7 +51,7 @@ const HeroSection = () => {
             <div className="w-full md:w-10/12">
               <motion.p
                 className={`${isDarkMode ? "text-white" : "text-black"} md:text-left text-lg md:text-md lg:text-md xl:text-xl`}
-              
+
               >
                 Welcome, I’m Erik a product designer passionate about blending user experience, thoughtful design, and innovative solutions. Based in Denver, I focus on crafting digital products that are both intuitive to use and a joy to engage with, whether as a designer, strategist, or leader.
               </motion.p>

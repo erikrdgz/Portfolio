@@ -172,19 +172,19 @@ const ExpandableCaseStudyCard = React.memo(({
                         exit={{ maxHeight: 0, opacity: 0 }} // Exit animation
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
-                        <div className="py-8 lg:px-9">
+                        <div className="py-8 lg:py-16 lg:px-9">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-12 lg:px-9 ">
-                                <div>
+                                <div className="text-center">
                                     <AnimatedNumber value={number1} isPercentage={isPercentage1} duration={2} />
-                                    <p className="text-md xl:text-md pt-4 font-light">{paragraph1}</p>
+                                    <p className="text-md xl:text-lg pt-4 font-light">{paragraph1}</p>
                                 </div>
-                                <div className="">
+                                <div className="text-center">
                                     <AnimatedNumber value={number2} isPercentage={isPercentage2} duration={2} />
-                                    <p className="text-md xl:text-md pt-4 font-light">{paragraph2}</p>
+                                    <p className="text-md xl:text-lg pt-4 font-light">{paragraph2}</p>
                                 </div>
-                                <div className="">
+                                <div className="text-center">
                                     <AnimatedNumber value={number3} isPercentage={isPercentage3} duration={2} />
-                                    <p className="text-md xl:text-md pt-4 font-light">{paragraph3}</p>
+                                    <p className="text-md xl:text-lg pt-4 font-light">{paragraph3}</p>
                                 </div>
                             </div>
                         </div>

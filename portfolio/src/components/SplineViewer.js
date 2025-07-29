@@ -20,11 +20,11 @@ const SplineViewer = ({ splineUrl, imageUrl, href, projectName }) => {
   }, []);
 
   return (
-    <motion.div className="relative w-full aspect-w-1 h-[50vh] md:h-[65vh] lg:h-full lg:h-[65vh] flex aspect-h-1 lg:flex justify-center items-center px-4">
+    <motion.div className="relative w-full aspect-w-1 h-[50vh] md:h-[65vh] lg:h-full lg:h-[65vh] flex aspect-h-1 lg:flex justify-center items-center px-4  ">
       {/* Conditional Rendering for Mobile */}
       {isMobile ? (
         <div
-          className={`absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg rounded-tl-3xl ${
+          className={`absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg rounded-tl-3xl  ${
             isDarkMode ? "bg-black" : "bg-white"
           }`}
         >
@@ -33,14 +33,14 @@ const SplineViewer = ({ splineUrl, imageUrl, href, projectName }) => {
       ) : (
         // Original link for tablet and up
         <div
-          className="absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg"
-          style={{ backgroundColor: "#f97316" }}
+          className="absolute bottom-0 right-0 w-48 h-16 z-10 flex justify-center items-center rounded-br-lg bg-cyan-400"
+          
         >
           <a
             href={href}
-            className="flex items-center gap-2 text-white hover:scale-110 transition-transform duration-300 z-40 w-full h-full  justify-center "
+            className="flex items-center gap-2 text-white hover:scale-110 transition-transform duration-300 z-40 w-full h-full font-bold  justify-center "
           >
-            Explore <HiMiniArrowUpRight />
+            Explore <HiMiniArrowUpRight className="stroke-[1]"/>
           </a>
         </div>
       )}

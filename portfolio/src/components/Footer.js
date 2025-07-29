@@ -35,7 +35,7 @@ const Footer = () => {
           >
             {/* Header */}
             <motion.div
-              className="text-6xl lg:text-8xl text-orange-500  font-bold relative mb-7"
+              className="text-6xl lg:text-8xl text-cyan-400 font-bold relative mb-7"
               variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
             >
               GET IN <br /> TOUCH{" "}
@@ -49,7 +49,7 @@ const Footer = () => {
               {/* Email */}
               <motion.a
                 href="mailto:erikrdgz2@gmail.com"
-                className="flex items-center space-x-2 text-lg hover:text-orange-400 transition-all duration-300"
+                className="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-all duration-300"
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
                 <CiMail className="text-xl" />
@@ -61,7 +61,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/erikrdgz2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-lg hover:text-orange-400 transition-all duration-300"
+                className="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-all duration-300"
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
                 <FaLinkedin className="text-xl" />
@@ -73,7 +73,7 @@ const Footer = () => {
                 href="https://github.com/erikrdgz2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-lg hover:text-orange-400 transition-all duration-300"
+                className="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-all duration-300"
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
                 <FaGithub className="text-xl" />
@@ -98,8 +98,8 @@ const Footer = () => {
 
           {/* Case Studies (Stacked) */}
           <div className="flex flex-col space-y-2 mt-0">
-            <span className="font-semibold">Case Study</span>
-            <ul className="space-y-2 pl-2 text-gray-400">
+            <span className="font-semibold">Case Studies</span>
+            <ul className="space-y-2 pl-2 ">
               <li>
               <AnimatedLink  route={"/koopid"} title={"Koopid"} />
               </li>
@@ -120,7 +120,7 @@ const Footer = () => {
       </div>
 
       <div className="text-xs text-gray-500 w-full text-center mt-32">
-        <p>&copy; 2024 Erik Rodriguez. All rights reserved.</p>
+        <p>&copy; 2025 Erik Rodriguez. All rights reserved.</p>
       </div>
     </footer>
   );

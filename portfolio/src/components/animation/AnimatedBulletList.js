@@ -13,7 +13,7 @@ const AnimatedBulletList = ({ heading, number, paragraph, items, endingParagraph
                 transition={{ duration: 0.5 }}
                 className={`${isDarkMode ? "text-white" : "text-black"} text-2xl md:text-4xl xl:text-4xl mb-4 md:py-4 md:mb-2 md:px-6`}
             >
-                <span className="text-orange-500">{number}</span>{heading}
+                <span className="text-cyan-400">{number}</span>{heading}
             </motion.h2>
             {paragraph && (
                 <motion.p
@@ -51,7 +51,7 @@ const AnimatedBulletList = ({ heading, number, paragraph, items, endingParagraph
                         >
                             {item.icon && (
                                 <div className="flex-shrink-0 w-6 h-16 md:w-12 md:h-12 flex items-center justify-center">
-                                    <item.icon className="text-md md:text-md text-orange-500" />
+                                    <item.icon className="text-md md:text-md text-cyan-400" />
                                 </div>
                             )}
                             <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-800"} flex-1 text-sm`}>

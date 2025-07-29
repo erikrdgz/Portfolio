@@ -62,7 +62,7 @@ const Home = () => {
                                 {Array.from("LATEST WORK").map((char, index) => (
                                     <motion.span
                                         key={index}
-                                        className="inline-block font-bold"
+                                        className="inline-block font-bold text-cyan-400"
                                         initial={{ opacity: 0, y: 30, z: -100 }}
                                         whileInView={{
                                             opacity: 1,
@@ -96,7 +96,7 @@ const Home = () => {
                             projectName="Mobile App"
                             splineUrl="https://my.spline.design/nslscopy-31a173977968de5bf31d3727eba973a1/"
                             title="Creating an exciting community feature for higher education"
-                            description="Post-course peer engagement was nearly nonexistent students completed modules but skipped meaningful community interaction. We tackled this by designing a mobile app that made engagement feel natural, accessible, and social, turning passive posts into real peer connection."
+                            description="Post-course peer engagement was nearly nonexistent; students completed modules but skipped meaningful community interaction. We tackled this by designing a mobile app that made engagement feel natural, accessible, and social, turning passive posts into real peer connection."
                             detailedDescription="A detailed description that explains the full case study."
                             chips={['Senior Product Designer', '8 Months', 'Higher Education Technology']}
                             buttonLink="/Nsls"

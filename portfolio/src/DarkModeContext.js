@@ -1,13 +1,19 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 
-// Create a context
 const DarkModeContext = createContext();
 
-// Create a provider to wrap your app with
 export const DarkModeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Get initial value from localStorage or default to true
+    const stored = localStorage.getItem("darkMode");
+    return stored ? JSON.parse(stored) : true;
+  });
 
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
 
   return (
     <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
@@ -16,5 +22,4 @@ export const DarkModeProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the DarkModeContext
 export const useDarkMode = () => useContext(DarkModeContext);

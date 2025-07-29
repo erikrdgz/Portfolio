@@ -278,7 +278,7 @@ const Koopid = () => {
                                     viewport={{ once: true }}
                                     className="w-full"
                                 >
-                                    <h4 className={`${isDarkMode ? "text-orange-500" : "text-orange-500"} font-semibold md:text-xl mb-3 `}>My Role</h4>
+                                    <h4 className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"} font-semibold md:text-xl mb-3 `}>My Role</h4>
                                     <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-800"}  md:text-md`}>Product Designer, Lead UX Designer and Developer</p>
                                 </motion.div>
                                 <motion.div
@@ -288,7 +288,7 @@ const Koopid = () => {
                                     viewport={{ once: true }}
                                     className="w-full"
                                 >
-                                    <h4 className={`${isDarkMode ? "text-orange-500" : "text-orange-500"} font-semibold md:text-xl mb-3 `}>Duration</h4>
+                                    <h4 className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"} font-semibold md:text-xl mb-3 `}>Duration</h4>
                                     <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-800"}  md:text-md`}>6 Months</p>
                                 </motion.div>
 
@@ -301,7 +301,7 @@ const Koopid = () => {
                                     viewport={{ once: true }}
                                     className="col-span-1 md:col-span-1 w-full"
                                 >
-                                    <h4 className={`${isDarkMode ? "text-orange-500" : "text-orange-500"} font-semibold md:text-xl mb-3 `}>My Team</h4>
+                                    <h4 className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"} font-semibold md:text-xl mb-3 `}>My Team</h4>
                                     <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-800"}  md:text-md`}>Product Manager, Engineering Lead, Front End Developers, and QA</p>
                                 </motion.div>
                                 <motion.div
@@ -311,7 +311,7 @@ const Koopid = () => {
                                     viewport={{ once: true }}
                                     className="col-span-1 md:col-span-1 w-full"
                                 >
-                                    <h4 className={`${isDarkMode ? "text-orange-500" : "text-orange-500"} font-semibold md:text-xl mb-3 `}>Industry</h4>
+                                    <h4 className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"} font-semibold md:text-xl mb-3 `}>Industry</h4>
                                     <p className={`${isDarkMode ? "text-neutral-400" : "text-neutral-800"}  md:text-md`}>A.I. Telecommunications</p>
                                 </motion.div>
                             </div>

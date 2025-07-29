@@ -275,7 +275,7 @@ const Dialpad = () => {
                                     viewport={{ once: true }}
                                     className="w-full"
                                 >
-                                    <h4 className="font-semibold md:text-xl mb-3 text-orange-500">My Role</h4>
+                                    <h4 className="font-semibold md:text-xl mb-3 text-cyan-400">My Role</h4>
                                     <p className="md:text-md">Product Designer</p>
                                 </motion.div>
                                 <motion.div
@@ -285,7 +285,7 @@ const Dialpad = () => {
                                     viewport={{ once: true }}
                                     className="w-full"
                                 >
-                                    <h4 className="font-semibold md:text-xl mb-3 text-orange-500">Duration</h4>
+                                    <h4 className="font-semibold md:text-xl mb-3 text-cyan-400">Duration</h4>
                                     <p className="md:text-md">4 Months</p>
                                 </motion.div>
 
@@ -298,7 +298,7 @@ const Dialpad = () => {
                                     viewport={{ once: true }}
                                     className="col-span-1 md:col-span-1 w-full"
                                 >
-                                    <h4 className="font-semibold md:text-xl mb-3 text-orange-500">My Team</h4>
+                                    <h4 className="font-semibold md:text-xl mb-3 text-cyan-400">My Team</h4>
                                     <p className="md:text-md">Product Manager, Engineering Lead, Front End Developers, and QA</p>
                                 </motion.div>
                                 <motion.div
@@ -308,7 +308,7 @@ const Dialpad = () => {
                                     viewport={{ once: true }}
                                     className="col-span-1 md:col-span-1 w-full"
                                 >
-                                    <h4 className="font-semibold md:text-xl mb-3 text-orange-500">Industry</h4>
+                                    <h4 className="font-semibold md:text-xl mb-3 text-cyan-400">Industry</h4>
                                     <p className="md:text-md">A.I. &amp; Video Conference Technology</p>
                                 </motion.div>
                             </div>

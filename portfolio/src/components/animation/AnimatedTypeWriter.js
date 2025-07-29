@@ -18,7 +18,7 @@ const AnimatedTypeWriter = ({ text, animationDelay = 0.1 }) => {
       <div className="container w-full px-6 sm:px-10 md:px-10 text-center">
         <motion.h2
           className={`text-lg sm:text-3xl md:text-4xl xl:text-5xl font-bold whitespace-normal ${
-            isDarkMode ? "text-white" : "text-black"
+            isDarkMode ? "text-cyan-400" : "text-cyan-400"
           }`}
         >
           {characters.map((char, index) => (

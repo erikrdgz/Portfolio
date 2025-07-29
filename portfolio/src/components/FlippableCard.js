@@ -57,7 +57,7 @@ const FlippableCard = ({ beforeImage, afterImage, title }) => {
       {/* Button */}
       <button
         onClick={handleFlip}
-        className="mt-4 px-6 py-2 rounded-lg text-orange-500 text-sm sm:text-base font-medium hover:text-orange-400 focus:ring-transparent focus:outline-none transition-all duration-300"
+        className="mt-4 px-6 py-2 rounded-lg text-cyan-400 text-sm sm:text-base font-medium hover:text-cyan-300 focus:ring-transparent focus:outline-none transition-all duration-300"
       >
         {isFlipped ? "View Legacy" : "View Redesign"}
       </button>

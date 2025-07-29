@@ -15,6 +15,8 @@ import HeroSection from "../components/section/HeroSection";
 import SkillsSection from "../components/section/SkillsSection";
 import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
 
+import LatestWorkSection from "../components/section/LatestWorkSection";
+
 const Home = () => {
   const { isDarkMode } = useDarkMode();
   const location = useLocation();
@@ -46,9 +48,8 @@ const Home = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       <div
-        className={`relative z-10 ${
-          isDarkMode ? "text-white" : "text-black"
-        } transition-colors duration-500`}
+        className={`relative z-10 ${isDarkMode ? "text-white" : "text-black"
+          } transition-colors duration-500`}
       >
         <AnimatePresence mode="sync">
           <motion.div
@@ -62,40 +63,7 @@ const Home = () => {
             <HeroSection isDarkMode={isDarkMode} />
             <SkillsSection isDarkMode={isDarkMode} />
 
-            <section
-  className="w-full h-[30vh] md:h-[50vh] overflow-hidden block py-8 flex items-center justify-center"
-  aria-labelledby="latest-work-heading-desktop"
->
-  <div className="container w-full px-6 sm:px-10 md:px-10 text-center">
-    <motion.h2
-      id="latest-work-heading-desktop"
-      ref={desktopSectionRef}
-      className="text-4xl md:text-7xl xl:text-9xl font-bold text-cyan-400 whitespace-nowrap flex justify-center gap-4 md:gap-8 w-full select-none"
-      style={{ lineHeight: 1.1 }}
-    >
-      <motion.span
-        animate={
-          isDesktopInView
-            ? { opacity: 1, x: 0 }
-            : { opacity: 0, x: "-10vw" }
-        }
-        transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-      >
-        LATEST
-      </motion.span>
-      <motion.span
-        animate={
-          isDesktopInView
-            ? { opacity: 1, x: 0 }
-            : { opacity: 0, x: "10vw" }
-        }
-        transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-      >
-        WORK
-      </motion.span>
-    </motion.h2>
-  </div>
-</section>
+           <LatestWorkSection />
 
 
             <section className="px-2 md:px-2 lg:px-9">

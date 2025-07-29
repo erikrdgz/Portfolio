@@ -143,12 +143,12 @@ const ExpandableCaseStudyCard = React.memo(({
                                     }`}
                             >
                                 {isExpanded ? (
-                                    <span className=" ">
+                                    <span className={`${isDarkMode ? "text-cyan-300" : "text-cyan-600"}`}>
                                         Close{" "}
                                         <RiArrowDropDownLine className="inline text-3xl -rotate-180" />
                                     </span>
                                 ) : (
-                                    <span className="">
+                                    <span className={`${isDarkMode ? "text-cyan-300" : "text-cyan-600"}`}>
                                         At a glance{" "}
                                         <RiArrowDropDownLine className="inline text-3xl" />
                                     </span>

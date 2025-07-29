@@ -46,7 +46,7 @@ const About = () => {
                         <a
                             href={resume}
                             download
-                            className="mt-4 inline-block bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-orange-600 transition"
+                            className="mt-4 inline-block bg-cyan-400 text-white px-6 py-3 rounded-lg shadow-md hover:bg-cyan-300 transition"
                         >
                             Download My Resume
                         </a>

@@ -81,11 +81,8 @@ const Home = () => {
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Fixed background */}
       <div
-        className="fixed top-0 left-0 h-full w-full z-0  bg-bottom bg-no-repeat"
-        style={{
-          backgroundImage: `url(${isDarkMode ? sand : sandLight})`,
-          backgroundAttachment: "fixed",
-        }}
+        className="  t"
+        
       />
 
       {/* Foreground content */}

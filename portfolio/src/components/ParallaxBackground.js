@@ -22,7 +22,7 @@ const ParallaxBackground = ({ image }) => {
       style={{
         y,
         backgroundImage: `url(${image})`,
-        height: viewportHeight,
+        height: viewportHeight * 1.2,
       }}
       className="fixed top-0 left-0 w-full bg-cover bg-center bg-no-repeat -z-10 pointer-events-none"
     />

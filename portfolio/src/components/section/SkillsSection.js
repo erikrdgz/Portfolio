@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useDarkMode } from "../../DarkModeContext";
+import { useEffect, useState } from "react";
 
 const skills = [
   {
@@ -22,6 +23,7 @@ const skills = [
       "Photoshop",
       "Illustrator",
       "Framer",
+      "Spline 3D",
       "InDesign",
       "Webflow",
     ],
@@ -32,10 +34,11 @@ const skills = [
       "HTML, CSS, JS",
       "Tailwind, Bootstrap",
       "React",
-      "ASP.net, C#",
       "Wordpress",
       "PHP",
+      "ASP.net, C#",
       "Git",
+      "AWS",
     ],
   },
   {
@@ -47,59 +50,99 @@ const skills = [
       "Telecommunications",
       "Artificial Intelligence",
       "EdTech",
+      "Robotics",
       "Agile Methodologies",
     ],
   },
 ];
 
+// Utility hook to detect mobile
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < breakpoint : false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < breakpoint);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 
 export default function SkillsSection() {
   const { isDarkMode } = useDarkMode();
+  const isMobile = useIsMobile();
+
+  // Animation parameters
+  const titleVariant = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "tween",
+        ease: "easeOut",
+        duration: isMobile ? 0.3 : 0.4,
+      },
+    },
+  };
+
+  const listVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: isMobile ? 0.06 : 0.12,
+        delayChildren: isMobile ? 0.05 : 0.15,
+      },
+    },
+  };
+
+  const itemVariant = {
+    hidden: { opacity: 0, x: isMobile ? -6 : -10, y: 10, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "tween",
+        ease: "easeOut",
+        duration: isMobile ? 0.25 : 0.4,
+      },
+    },
+  };
 
   return (
-    <section className="flex flex-col items-center  gap-12 px-6 lg:h-[50vh]">
+    <section className="flex flex-col items-center lg:mb-28 gap-12 px-6 lg:h-[50vh]">
       {/* Skills Columns (Responsive Grid) */}
-      <div className="grid grid-cols-2 md:grid-cols-4 items-start  gap-4 md:gap-6 lg:gap-8 w-full max-w-screen-lg mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 items-start  gap-4 md:gap-6 lg:gap-8 w-full max-w-screen-xl mx-auto">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.title}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="space-y-4 w-full"
+            className="space-y-4 w-full p-4 glass-card rounded-lg"
           >
             {/* Title */}
             <motion.h3
-              className= {`text-base font-bold ${isDarkMode ? "text-white" : "text-gray-800"}`}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { delay: 0.2 * index } },
-              }}
+              className= {`text-lg font-bold border-b  ${isDarkMode ? "text-white border-white" : "text-gray-800 border-gray-800"}`}
+              variants={titleVariant}
             >
               {skill.title}
             </motion.h3>
 
             {/* List Items */}
             <motion.ul
-              className={`space-y-2 ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.4 + 0.2 * index,
-                  },
-                },
-              }}
+              className={`space-y-2 ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}
+              variants={listVariant}
             >
               {skill.items.map((item, itemIndex) => (
                 <motion.li
                   key={item}
-                  className="translate-x-[-10px] text-sm"
-                  variants={{
-                    hidden: { opacity: 0, x: -20 },
-                    visible: { opacity: 1, x: 0 },
-                  }}
+                  className="translate-x-[-5px] text-base"
+                  variants={itemVariant}
                 >
                   {item}
                 </motion.li>

@@ -43,7 +43,7 @@ const Navbar = () => {
             <nav
                 className={`fixed top-0 right-0 w-full z-[20] h-[64px] transition-colors duration-500
                 ${isDarkMode ? "text-white" : "text-black"}
-                ${hasScrolled ? (isDarkMode ? "bg-black" : "bg-white") : "bg-transparent"}`}
+                ${hasScrolled ? (isDarkMode ? "glass-card--thick rounded-b-xl" : "glass-card--thick rounded-b-xl") : "bg-transparent"}`}
             >
                 <div className="px-4 pt-2 flex justify-between items-center relative">
                     <Link to="/" className="text-3xl font-bold ml-2">
@@ -52,7 +52,7 @@ const Navbar = () => {
                             style={{ fill: isDarkMode ? "white" : "black" }}
                         />
                     </Link>
-                    <a href="/" className="absolute left-1/2 transform -translate-x-1/2 hidden md:block text-md">
+                    <a href="/" className="absolute left-1/2 transform -translate-x-1/2 hidden md:block text-md hover:text-cyan-400">
                         Erik Rodriguez Portfolio
                     </a>
                     <div className="flex items-center space-x-4 ml-auto">
@@ -77,7 +77,7 @@ const Navbar = () => {
 
             {/* Sidebar */}
             <motion.div
-                className={`fixed top-0 right-0 h-full z-[20] shadow-lg overflow-hidden ${isDarkMode ? "bg-neutral-950 text-white" : "bg-white text-black"
+                className={`fixed top-0 right-0 h-full z-[20] shadow-lg overflow-hidden ${isDarkMode ? "glass-card--thick text-white" : "glass-card--thick text-black"
                     }`}
                     initial={{ x: isMobile ? 0 : "100%", y: isMobile ? "-100%" : 0 }} 
                     animate={{ x: isMobile ? 0 : (isSidebarOpen ? 0 : "100%"), y: isMobile ? (isSidebarOpen ? 0 : "-100%") : 0 }} 
@@ -89,7 +89,7 @@ const Navbar = () => {
                   }}
             >
                 <button
-                    className="absolute top-4 right-4 text-3xl"
+                    className={`absolute top-4 right-4 text-3xl rounded-xl ${isDarkMode ? "hover:bg-neutral-800" : "bg-white"}`}
                     onClick={toggleSidebar}
                 >
                     <VscClose />

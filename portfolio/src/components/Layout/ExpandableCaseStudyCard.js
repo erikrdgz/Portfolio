@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence
 import CircleButton from "../buttons/CircleButton";
+import GlassmorphicButton from "../buttons/GlassmorphicButton";
 import { useDarkMode } from "../../DarkModeContext";
 // import transition from "../../transitions";
 import SplineViewer from "../SplineViewer";
@@ -42,20 +43,20 @@ const ExpandableCaseStudyCard = React.memo(({
         <section
             className={`${isExpanded
                 ? isDarkMode
-                    ? "bg-neutral-900 rounded-lg"
-                    : "shadow-md rounded-lg"
+                    ? "bg-neutral-900 rounded-lg "
+                    : "shadow-md rounded-lg border border-cyan-400"
                 : ""
-                } transition-colors duration-500 my-4 relative overflow-hidden`}
+                } transition-colors duration-500 md:my-8 relative overflow-hidden py-6 rounded-xl glass-card my-4`}
         >
             {/* Default (Collapsed) View */}
             <motion.div
-                className="grid grid-cols-1 xl:grid-cols-2 py-12 pb-4 px-2 md:px-4 lg:px-9"
+                className="grid grid-cols-1  lg:grid-cols-2 py-4 pb-4 px-2 md:px-4 lg:px-9"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
                 {/* Image Section */}
-                <div className="flex justify-center items-center ">
+                <div className="flex justify-center items-center order-1 lg:order-2">
                     {/* Conditional Rendering for SplineViewer or Mobile Image */}
                     <div className="hidden lg:hidden">
                         <motion.img
@@ -68,20 +69,20 @@ const ExpandableCaseStudyCard = React.memo(({
                             transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
                         />
                     </div>
-                    <div className={`${isDarkMode ? " bg-neutral-950" : " bg-neutral-100"} transition-colors duration-500 block lg:block w-full h-full   rounded-lg`}>
+                    <div className={`${isDarkMode ? " " : " "} transition-colors duration-500 block lg:block w-full h-full   rounded-lg`}>
                         <SplineViewer splineUrl={splineUrl} divColor={divColor} href={href} projectName={projectName} />
                     </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="flex items-end justify-start">
+                <div className="flex items-end justify-start order-2 lg:order-1">
                     <div className="pt-4 px-2 md:px-8">
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
-                            className={`${isDarkMode ? "text-gray-300" : "text-gray-700"
+                            className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"
                                 } text-lg md:text-base lg:text-2xl mt-8 mb-4 md:mb-4 lg:mb-4 leading-loose transition-colors duration-500`}
                         >
                             {company}
@@ -124,6 +125,9 @@ const ExpandableCaseStudyCard = React.memo(({
                                 </span>
                             ))}
                         </motion.div>
+
+
+                        
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -131,31 +135,28 @@ const ExpandableCaseStudyCard = React.memo(({
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                             className="flex gap-4"
                         >
-                            <button
+                            <GlassmorphicButton
+                                isDarkMode={isDarkMode}
                                 onClick={toggleExpand}
-                                className={`px-2 py-3 h-14 rounded flex justify-center w-40 md:w-60  transition-all duration-500 ${isExpanded
-                                        ? isDarkMode
-                                            ? "text-white bg-neutral-950 " // close dark
-                                            : "bg-neutral-100 text-black" // close light
-                                        : isDarkMode
-                                            ? "text-white bg-neutral-950" // open dark
-                                            : "bg-neutral-100 text-black" // open light
-                                    }`}
+                                className="mx-0"
                             >
                                 {isExpanded ? (
-                                    <span className={`${isDarkMode ? "text-cyan-300" : "text-cyan-600"}`}>
+                                    <span className={`${isDarkMode ? "text-cyan-300" : "text-cyan-400"}`}>
                                         Close{" "}
                                         <RiArrowDropDownLine className="inline text-3xl -rotate-180" />
                                     </span>
                                 ) : (
-                                    <span className={`${isDarkMode ? "text-cyan-300" : "text-cyan-600"}`}>
+                                    <span className={`${isDarkMode ? "text-cyan-400" : "text-cyan-400"}`}>
                                         At a glance{" "}
                                         <RiArrowDropDownLine className="inline text-3xl" />
                                     </span>
                                 )}
-                            </button>
+                            </GlassmorphicButton>
+                            <div className="flex items-center mx-auto justify-center">
+                                <CircleButton href={buttonLink} />
+                            </div>
 
-                            <CircleButton href={buttonLink} />
+                           
                         </motion.div>
 
                     </div>

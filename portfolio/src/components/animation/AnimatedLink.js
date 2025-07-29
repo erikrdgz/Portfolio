@@ -10,18 +10,47 @@ const AnimatedLink = ({ route, title, onClick }) => {
   return (
     <Link
       to={route}
-      className={`relative flex items-center px-4 py-2 rounded-md transition-colors duration-200 hover:text-cyan-400 ${ isDarkMode ? "hover:bg-neutral-800" : "hover:bg-neutral-50"} `}
+      onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick} 
+      className={`
+        relative flex items-center px-4 py-2 rounded-md
+        transition-colors duration-300 ease-in-out
+        ${isHovered ? "text-white" : ""}
+      `}
+      style={{ fontWeight: 'inherit', fontSize: 'inherit', color: isHovered ? 'white' : undefined }}
     >
-      {title}
+      {/* Background sliding in */}
       <span
-        className={`ml-1 text-cyan-400 transition-all duration-300 ${
-          isHovered ? "opacity-100 translate-x-1" : "opacity-0 translate-x-0"
-        }`}
+        aria-hidden="true"
+        className={`
+          absolute inset-0
+          bg-cyan-400
+          rounded-md
+          transition-all duration-300 ease-in-out
+          pointer-events-none
+          ${isHovered ? "w-28" : "w-0"}
+        `}
+        style={{ left: 0, top: 0, bottom: 0, position: "absolute", zIndex: 0 }}
+      />
+
+      {/* Text and arrow wrapper */}
+      <span
+        className="relative flex items-center space-x-1 z-10"
+        style={{ fontWeight: 'inherit', fontSize: 'inherit' }}
       >
-        <FiArrowRight />
+        <span>{title}</span>
+        <span
+          className={`
+            text-white
+            inline-block w-[1em] h-[1em]
+            transition-all duration-300 ease-out
+            ${isHovered ? "opacity-100 translate-x-1" : "opacity-0 translate-x-0"}
+          `}
+          style={{ visibility: "visible" }}
+        >
+          <FiArrowRight />
+        </span>
       </span>
     </Link>
   );

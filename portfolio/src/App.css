@@ -1,5 +1,4 @@
-
-.main-color{
+.main-color {
   color: #FF1d58;
 }
 
@@ -27,16 +26,21 @@
 
 /* CSS */
 .mask-image {
-  clip-path: inset(100% 100% 100% 100%); /* Start with a hidden mask */
-  animation: revealMask 2s ease-in-out forwards; /* Apply the mask animation */
+  clip-path: inset(100% 100% 100% 100%);
+  /* Start with a hidden mask */
+  animation: revealMask 2s ease-in-out forwards;
+  /* Apply the mask animation */
 }
 
 @keyframes revealMask {
   0% {
-      clip-path: inset(100% 100% 100% 100%); /* Initially hidden */
+    clip-path: inset(100% 100% 100% 100%);
+    /* Initially hidden */
   }
+
   100% {
-      clip-path: inset(0% 0% 0% 0%); /* Reveal the full image */
+    clip-path: inset(0% 0% 0% 0%);
+    /* Reveal the full image */
   }
 }
 
@@ -56,7 +60,8 @@
 }
 
 .card-container:hover .koopid-svg {
-  fill: #3b82f6; /* Changes the fill color of the rect when the wrapper is hovered */
+  fill: #3b82f6;
+  /* Changes the fill color of the rect when the wrapper is hovered */
 }
 
 .card-container:hover .phone {
@@ -65,8 +70,10 @@
 }
 
 .koopid-svg {
-  fill: #94a3b8; /* Initial fill color */
-  transition: fill 0.3s ease; /* Smooth transition */
+  fill: #94a3b8;
+  /* Initial fill color */
+  transition: fill 0.3s ease;
+  /* Smooth transition */
 }
 
 .dialpad-svg-wrapper {
@@ -75,26 +82,29 @@
   height: 100%;
 }
 
-.bg-svg-default{
+.bg-svg-default {
   background-color: #94a3b8;
 }
 
 .card-container:hover .dialpad-svg {
-  fill: #6366f1; /* Changes the fill color of the rect when the wrapper is hovered */
+  fill: #6366f1;
+  /* Changes the fill color of the rect when the wrapper is hovered */
 }
 
-.dialpad-screen{
+.dialpad-screen {
   transition: 300ms ease-in-out;
 }
 
-.card-container:hover .dialpad-screen{
+.card-container:hover .dialpad-screen {
   transform: scale(1.01);
-  
+
 }
 
 .dialpad-svg {
-  fill: #94a3b8; /* Initial fill color */
-  transition: fill 0.3s ease; /* Smooth transition */
+  fill: #94a3b8;
+  /* Initial fill color */
+  transition: fill 0.3s ease;
+  /* Smooth transition */
 }
 
 .nsls-svg-wrapper {
@@ -105,54 +115,60 @@
 
 
 .card-container:hover .nsls-svg {
-  fill: #f43f5e; /* Changes the fill color of the rect when the wrapper is hovered */
+  fill: #f43f5e;
+  /* Changes the fill color of the rect when the wrapper is hovered */
 }
 
 .nsls-svg {
-  fill: #94a3b8; /* Initial fill color */
-  transition: fill 0.3s ease; /* Smooth transition */
+  fill: #94a3b8;
+  /* Initial fill color */
+  transition: fill 0.3s ease;
+  /* Smooth transition */
 }
 
-.card-container:hover #phone-l{
+.card-container:hover #phone-l {
   transform: translateX(-3px);
   transition: 300ms ease-in-out;
 }
 
-.card-container:hover #phone-m{
+.card-container:hover #phone-m {
   transform: translateY(3px);
   transition: 300ms ease-in-out;
 }
 
-.card-container:hover #phone-r{
+.card-container:hover #phone-r {
   transform: translateX(3px);
   transition: 300ms ease-in-out;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-family: "Inter", sans-serif;
   font-style: normal;
 }
 
 .p {
-  font-family: "Open Sans", sans-serif!important;
+  font-family: "Open Sans", sans-serif !important;
   font-style: normal;
 }
 
 
 
-.bg-black--2{
+.bg-black--2 {
   background-color: #232323;
 }
 
-.bg-white--2{
+.bg-white--2 {
   background-color: #f5fbff;
 }
-.text-xsm{
+
+.text-xsm {
   font-size: 0.75rem;
 }
 
-@media (min-width: 768px){
-  .text-xsm{
+@media (min-width: 768px) {
+  .text-xsm {
     font-size: 1rem;
   }
 }
@@ -162,23 +178,30 @@ h1,h2,h3 {
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  bottom: 10px; /* Adjust the spacing as needed */
-  transform: translateY(100%); /* Moves the buttons to the bottom of the container */
+  bottom: 10px;
+  /* Adjust the spacing as needed */
+  transform: translateY(100%);
+  /* Moves the buttons to the bottom of the container */
 }
 
 .swiper-button-next {
-  right: 10px; /* Adjust positioning for the right arrow */
+  right: 10px;
+  /* Adjust positioning for the right arrow */
 }
 
 .swiper-button-prev {
-  left: 10px; /* Adjust positioning for the left arrow */
+  left: 10px;
+  /* Adjust positioning for the left arrow */
 }
 
 .icon-gradient {
-  fill: #a6e8e5 ; /* Gradient colors */
- /* Clip the background to the text (SVG) */
-  color: transparent; /* Make the color transparent so the background is visible */
-  display: inline-block; /* Ensure the icon is treated as an inline element */
+  fill: #a6e8e5;
+  /* Gradient colors */
+  /* Clip the background to the text (SVG) */
+  color: transparent;
+  /* Make the color transparent so the background is visible */
+  display: inline-block;
+  /* Ensure the icon is treated as an inline element */
 }
 
 /* Make the scrolling banner only appear on mobile */
@@ -197,6 +220,7 @@ h1,h2,h3 {
     0% {
       transform: translateX(100%);
     }
+
     100% {
       transform: translateX(-100%);
     }
@@ -206,6 +230,7 @@ h1,h2,h3 {
     0% {
       transform: translateX(100%);
     }
+
     100% {
       transform: translateX(-100%);
     }
@@ -215,17 +240,22 @@ h1,h2,h3 {
 
 .banner-container {
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
+
 .banner {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 }
+
 @media (max-width: 768px) {
   .banner-item img {
-      height: 60px; /* Adjust logo size for smaller screens */
-      margin: 0 20px; /* Reduce spacing for smaller screens */
+    height: 60px;
+    /* Adjust logo size for smaller screens */
+    margin: 0 20px;
+    /* Reduce spacing for smaller screens */
   }
 }
 
@@ -236,39 +266,63 @@ h1,h2,h3 {
   mask-size: 100% 100%;
 }
 
-.spline-watermark{
-  display: none!important;
+.spline-watermark {
+  display: none !important;
 }
 
 /* Extending Tailwind’s text sizes */
 .text-10xl {
-  font-size: 10.5rem; /* 168px */
+  font-size: 10.5rem;
+  /* 168px */
   line-height: 1;
 }
 
 .text-11xl {
-  font-size: 13rem; /* 208px */
+  font-size: 13rem;
+  /* 208px */
   line-height: 1;
 }
 
 .text-12xl {
-  font-size: 16rem; /* 256px */
+  font-size: 16rem;
+  /* 256px */
   line-height: 1;
 }
 
 .text-13xl {
-  font-size: 20rem; /* 320px */
+  font-size: 20rem;
+  /* 320px */
   line-height: 1;
 }
 
 .text-14xl {
-  font-size: 25rem; /* 400px */
+  font-size: 25rem;
+  /* 400px */
   line-height: 1;
 }
 
 .text-15xl {
-  font-size: 31rem; /* 496px */
+  font-size: 31rem;
+  /* 496px */
   line-height: 1;
 }
 
 
+
+
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card--thick {
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

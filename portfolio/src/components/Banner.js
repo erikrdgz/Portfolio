@@ -48,7 +48,7 @@ const Banner = () => {
   return (
     <motion.div
       className={`banner-container ${
-        isDarkMode ? "bg-black" : "bg-white"
+        isDarkMode ? "" : ""
       } transition-colors duration-500`}
       style={{ padding: "20px 0" }}
       initial="hidden"

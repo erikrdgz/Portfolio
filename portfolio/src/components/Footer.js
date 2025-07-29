@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`${isDarkMode ? "bg-black text-white border-neutral-900" : "bg-white text-black"
+      className={`${isDarkMode ? " text-white border-neutral-900" : " text-black"
         } border-t-2 py-16 px-6 mt-auto transition-colors duration-500 w-full`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 space-y-6">
@@ -49,11 +49,20 @@ const Footer = () => {
               {/* Email */}
               <motion.a
                 href="mailto:erikrdgz2@gmail.com"
-                className="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-all duration-300"
+                className="group relative overflow-hidden flex items-center space-x-2 text-lg text-cyan-400 hover:text-white transition-all duration-300 font-bold rounded-md py-1 px-3"
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
-                <CiMail className="text-xl" />
-                <span>Email me: erikrdgz2@gmail.com</span>
+                {/* Animated background */}
+                <span
+                  className="absolute inset-0 w-0 group-hover:w-full transition-all duration-300 bg-cyan-400 z-0 pointer-events-none"
+                  style={{ borderRadius: '0.375rem' }}
+                  aria-hidden="true"
+                />
+                {/* Icon and text */}
+                <span className="relative z-10 flex items-center space-x-2">
+                  <CiMail className="text-xl" />
+                  <span>Send Email</span>
+                </span>
               </motion.a>
 
               {/* LinkedIn */}
@@ -61,23 +70,37 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/erikrdgz2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-all duration-300"
+                className="group relative overflow-hidden flex items-center space-x-2 text-lg text-blue-700 hover:text-white transition-all duration-300 font-bold rounded-md py-1 px-3"
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
-                <FaLinkedin className="text-xl" />
-                <span>LinkedIn</span>
+                <span
+                  className="absolute inset-0 w-0 group-hover:w-full transition-all duration-300 bg-blue-700 z-0 pointer-events-none"
+                  style={{ borderRadius: '0.375rem' }}
+                  aria-hidden="true"
+                />
+                <span className="relative z-10 flex items-center space-x-2">
+                  <FaLinkedin className="text-xl" />
+                  <span>LinkedIn</span>
+                </span>
               </motion.a>
 
               {/* GitHub */}
               <motion.a
-                href="https://github.com/erikrdgz2"
+                href="https://github.com/erikrdgz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-lg hover:text-cyan-400 transition-all duration-300"
+                className="group relative overflow-hidden flex items-center space-x-2 text-lg text-purple-500 hover:text-white transition-all duration-300 font-bold rounded-md py-1 px-3"
                 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
-                <FaGithub className="text-xl" />
-                <span>GitHub</span>
+                <span
+                  className="absolute inset-0 w-0 group-hover:w-full transition-all duration-300 bg-purple-500 z-0 pointer-events-none"
+                  style={{ borderRadius: '0.375rem' }}
+                  aria-hidden="true"
+                />
+                <span className="relative z-10 flex items-center space-x-2">
+                  <FaGithub className="text-xl" />
+                  <span>GitHub</span>
+                </span>
               </motion.a>
             </motion.div>
           </motion.div>
@@ -85,9 +108,9 @@ const Footer = () => {
         </div>
 
         {/* Right Section (Navigation Links Stacked) */}
-        <nav className="flex flex-col text-md md:text-sm space-y-6">
-          <p className={`${isDarkMode ? "border-b-2 border-neutral-800" : "border-neutral-200 border-b-2"} pb-4`}>Navigate</p>
-
+        <nav className="flex flex-col justify-center text-md md:text-sm ">
+          
+            <h4 className="relative z-10 font-semibold text-xl mb-4">Navigate</h4>
           {/* Home & About (Stacked) */}
           <div className="flex flex-col space-y-2">
             
@@ -97,9 +120,9 @@ const Footer = () => {
           </div>
 
           {/* Case Studies (Stacked) */}
-          <div className="flex flex-col space-y-2 mt-0">
-            <span className="font-semibold">Case Studies</span>
-            <ul className="space-y-2 pl-2 ">
+          <div className="flex flex-col  mt-0">
+            <p className="relative z-10 font-semibold text-md my-4 pl-4">Case Studies</p>
+            <ul className="space-y-2 pl-6 ">
               <li>
               <AnimatedLink  route={"/koopid"} title={"Koopid"} />
               </li>

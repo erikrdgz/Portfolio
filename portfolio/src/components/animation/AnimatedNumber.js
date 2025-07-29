@@ -27,7 +27,7 @@ const AnimatedNumber = ({ value, isPercentage = false, duration = 2 }) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className="text-4xl lg:text-6xl font-semibold text-cyan-400"
     >
       {currentValue.toFixed(isPercentage ? 0 : 2)}

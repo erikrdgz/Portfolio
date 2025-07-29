@@ -24,39 +24,41 @@ import NotFound from "./components/NotFound";
 import sand from "./assets/images/sand.jpg";
 import sandLight from "./assets/images/sand-light.png";
 
+import ParallaxBackground from "./components/ParallaxBackground";
+
 // Wrapper component to apply dynamic background
 const AppLayout = () => {
   const location = useLocation();
   const { isDarkMode } = useDarkMode();
 
   return (
-    <div
-      className="min-h-screen flex flex-col bg-cover bg-fixed bg-bottom bg-no-repeat"
-      style={{
-        backgroundImage: `url(${isDarkMode ? sand : sandLight})`,
-      }}
-    >
-      <ScrollToTop />
-      {/* <CustomCursor /> */}
-      <Navbar />
+    <>
+      {/* ✅ Add this outside the main layout to act as background */}
+      <ParallaxBackground image={isDarkMode ? sand : sandLight} />
 
-      <div className="flex-grow">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route index element={<Home />} />
-            <Route path="/Koopid" element={<Koopid />} />
-            <Route path="/Dialpad" element={<Dialpad />} />
-            <Route path="/NSLS" element={<NSLS />} />
-            <Route path="/Designs" element={<Designs />} />
-            <Route path="/About" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AnimatePresence>
+      <div className="min-h-screen flex flex-col relative z-10">
+        <ScrollToTop />
+        {/* <CustomCursor /> */}
+        <Navbar />
+
+        <div className="flex-grow">
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route index element={<Home />} />
+              <Route path="/Koopid" element={<Koopid />} />
+              <Route path="/Dialpad" element={<Dialpad />} />
+              <Route path="/NSLS" element={<NSLS />} />
+              <Route path="/Designs" element={<Designs />} />
+              <Route path="/About" element={<About />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AnimatePresence>
+        </div>
+
+        <Footer />
+        <FloatingSocialBar />
       </div>
-
-      <Footer />
-      <FloatingSocialBar />
-    </div>
+    </>
   );
 };
 

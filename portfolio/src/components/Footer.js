@@ -67,7 +67,7 @@ const Footer = () => {
 
               {/* LinkedIn */}
               <motion.a
-                href="https://www.linkedin.com/in/erikrdgz2"
+                href="https://www.linkedin.com/in/erikrdgz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden flex items-center space-x-2 text-lg text-blue-700 hover:text-white transition-all duration-300 font-bold rounded-md py-1 px-3"

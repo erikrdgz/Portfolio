@@ -26,7 +26,8 @@ import sandLight from "./assets/images/sand-light.png";
 
 import ParallaxBackground from "./components/ParallaxBackground";
 
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Wrapper component to apply dynamic background
 const AppLayout = () => {
@@ -68,6 +69,7 @@ const App = () => (
   <DarkModeProvider>
     <AppLayout />
      <Analytics />
+     <SpeedInsights/>
   </DarkModeProvider>
 );
 

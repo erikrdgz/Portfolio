@@ -9,7 +9,6 @@ import techtonicLogo from "../assets/images/logos/techtonic-logo.png";
 import ifccLogo from "../assets/images/logos/ifcc-logo.png";
 import koopidLogo from "../assets/images/logos/koopid-logo.png";
 
-
 const Banner = () => {
   const { isDarkMode } = useDarkMode();
 
@@ -22,41 +21,30 @@ const Banner = () => {
     koopidLogo,
   ];
 
-  // Framer Motion Variants
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Stagger delay for child animations
+        staggerChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
     <motion.div
-      className={`banner-container transition-colors duration-500 py- px-8`}
-      style={{ padding: "" }}
+      className="banner-container transition-colors duration-500 py-4 lg:py-8 px-4 lg:px-8"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       variants={containerVariants}
     >
       <motion.div
-        className={`grid lg:grid-cols-3 grid-cols-2 gap-4 py-12 lg:py-20 items-center justify-center ${
+        className={`grid grid-cols-2 lg:grid-cols-3 gap-4 py-12 lg:py-20 items-center justify-center ${
           isDarkMode ? "text-white" : "text-black"
         }`}
       >

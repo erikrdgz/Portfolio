@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useDarkMode } from "../../DarkModeContext";
 import { useEffect, useState } from "react";
 
+import LiquidGlass from "../surface/LiquidGlass";
+
 const skills = [
   {
     title: "Design Strategy",
@@ -114,16 +116,17 @@ export default function SkillsSection() {
   };
 
   return (
-    <section className="flex flex-col items-center lg:mb-28 gap-12 px-6 lg:h-[50vh]">
+    <section className="flex flex-col items-center lg:mb-28 gap-12 px-4 lg:px-6 lg:h-[50vh]">
       {/* Skills Columns (Responsive Grid) */}
-      <div className="grid grid-cols-1 md:grid-cols-4 items-start  gap-4 md:gap-6 lg:gap-8 w-full max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start  gap-4 md:gap-6 lg:gap-8 w-full max-w-screen-xl mx-auto">
         {skills.map((skill, index) => (
+          <LiquidGlass className="rounded-3xl" isDarkMode={isDarkMode}>
           <motion.div
             key={skill.title}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="space-y-4 w-full p-4 glass-card rounded-lg"
+            className="space-y-4 w-full p-4  rounded-lg"
           >
             {/* Title */}
             <motion.h3
@@ -149,6 +152,7 @@ export default function SkillsSection() {
               ))}
             </motion.ul>
           </motion.div>
+          </LiquidGlass>
         ))}
       </div>
     </section>

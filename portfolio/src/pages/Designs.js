@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useDarkMode } from "../DarkModeContext";
 import transition from "../transitions";
+import LiquidGlass from "../components/surface/LiquidGlass";
 
 // Import all images dynamically from the designs folder
 const importAll = (r) => r.keys().map(r);
@@ -35,9 +36,9 @@ const Designs = () => {
   return (
     <section className={`${isDarkMode ? " text-white" : " text-black"} pt-20 py-12 md:pt-24 p-8 flex flex-col items-center overflow-hidden`}>
       {/* Title and Paragraph */}
-      <div className={`text-center mx-auto mb-8 w-full rounded-xl p-4 glass-card`}>
+      <LiquidGlass className={`text-center mx-auto mb-8 w-full rounded-xl p-4 `}>
         <motion.h1
-          className="text-4xl md:text-9xl font-bold mx-auto pt-24 mb-4"
+          className="text-4xl md:text-9xl font-bold mx-auto pt-12 mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -45,14 +46,14 @@ const Designs = () => {
           UI Designs
         </motion.h1>
         <motion.p
-          className={`${isDarkMode ? "text-neutral-300" : "text-neutral-900"} text-lg md:text-lg mb-8`}
+          className={`${isDarkMode ? "text-neutral-300" : "text-neutral-900"} text-md md:text-lg mb-8`}
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           Explore a curated collection of creative designs that showcase my passion for detail and innovation. I like to exercise my creative muscle and quickly create some interfaces to later study and better attempt to understand the creative flow in my head.
         </motion.p>
-      </div>
+      </LiquidGlass>
 
       {/* Image Gallery */}
       <motion.div

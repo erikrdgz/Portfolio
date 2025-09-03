@@ -39,8 +39,13 @@ const HeroSection = () => {
   };
 
   return (
-    <div className={`relative flex h-screen transition-all duration-500`}>
-      <div className="flex items-center justify-center w-full h-full overflow-hidden px-9">
+ <div
+  className="relative flex h-screen transition-all duration-500"
+  style={{
+    height: window.innerWidth < 330 ? "130vh" : undefined,
+  }}
+>
+      <div className="flex items-center justify-center w-full h-full overflow-hidden px-4 lg:px-9">
         <div className="w-full md:grid md:grid-cols-2 md:gap-8">
           <div className="flex md:justify-center items-center md:items-end">
             <motion.div className="flex flex-col items-center md:items-start justify-center pb-9 md:pb-0">

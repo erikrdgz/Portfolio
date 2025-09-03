@@ -79,7 +79,7 @@ const Nsls = () => {
             icon: BiRightArrow,
         },
         {
-            header: "new Users",
+            header: "New Users",
             description: "Expressed interest in structured learning paths but found the platform difficult to navigate.",
             icon: BiRightArrow,
         },

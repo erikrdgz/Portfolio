@@ -7,17 +7,17 @@ import resume from "../assets/Erik_Rodriguez_Resume_2025.pdf";
 
 import sand from "../assets/images/sand.jpg";
 import sandLight from "../assets/images/sand-light.png";
+import LiquidGlass from "../components/surface/LiquidGlass";
 
 const About = () => {
     const { isDarkMode } = useDarkMode();
     return (
-        <section className={`${isDarkMode ? " text-white" : " text-black"} transition-colors duration-500 pt-20 py-12 md:pt-24 p-4 flex flex-col items-center bg-bottom bg-cover bg-no-repeat`}
+        <section className={`${isDarkMode ? " text-white" : " text-black"} transition-colors duration-500 pt-20 lg:py-12 md:pt-24 p-4 flex flex-col items-center bg-bottom bg-cover bg-no-repeat`}
          style={{
-          backgroundImage: `url(${isDarkMode ? sand : sandLight})`,
           backgroundAttachment: "fixed",
         }}
         >
-            <div className="relative z-10 container mx-auto px-4 py-4 glass-card rounded-xl">
+            <LiquidGlass className="relative z-10 container mx-auto px-4 py-2 rounded-xl">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
 
                     <motion.div
@@ -26,6 +26,7 @@ const About = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
+                        
                         <img
                             src={me}
                             alt="About us"
@@ -54,7 +55,7 @@ const About = () => {
                         <a
                             href={resume}
                             download
-                            className="mt-4 inline-block bg-cyan-400 text-white px-6 py-3 rounded-lg shadow-md hover:bg-cyan-300 transition"
+                            className="mt-4 inline-block bg-cyan-400 text-white px-6 py-3 rounded-full shadow-md hover:bg-cyan-300 transition"
                         >
                             Download My Resume
                         </a>
@@ -62,7 +63,7 @@ const About = () => {
 
 
                 </div>
-            </div>
+            </LiquidGlass>
         </section>
     );
 };

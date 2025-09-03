@@ -17,6 +17,7 @@ import AnimatedTypeWriter from "../components/animation/AnimatedTypeWriter";
 
 import LatestWorkSection from "../components/section/LatestWorkSection";
 import GlassSurface from "../components/surface/GlassSurface";
+import LiquidGlass from "../components/surface/LiquidGlass";
 
 const Home = () => {
   const { isDarkMode } = useDarkMode();
@@ -66,7 +67,9 @@ const Home = () => {
 
             <LatestWorkSection />
 
-            <section className="px-2 md:px-2 lg:px-9">
+
+            <section className="px-4 md:px-6 lg:px-9">
+            
               <MemoizedCaseStudyCard
                 isDarkMode={isDarkMode}
                 mobileImg={isDarkMode ? nslsImage : nslsImageLight}

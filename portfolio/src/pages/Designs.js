@@ -34,9 +34,9 @@ const Designs = () => {
   };
 
   return (
-    <section className={`${isDarkMode ? " text-white" : " text-black"} pt-20 py-12 md:pt-24 p-8 flex flex-col items-center overflow-hidden`}>
+    <section className={`${isDarkMode ? " text-white" : " text-black"} pt-20 py-12 md:pt-24 p-4 flex flex-col items-center overflow-hidden`}>
       {/* Title and Paragraph */}
-      <LiquidGlass className={`text-center mx-auto mb-8 w-full rounded-xl p-4 `}>
+      <LiquidGlass className={`text-center mx-auto mb-8 w-full rounded-3xl p-4 `}>
         <motion.h1
           className="text-4xl md:text-9xl font-bold mx-auto pt-12 mb-4"
           initial={{ opacity: 0, y: -50 }}
@@ -73,7 +73,7 @@ const Designs = () => {
         {images.map((src, index) => (
           <motion.div
             key={index}
-            className="relative overflow-hidden rounded "
+            className="relative overflow-hidden rounded-xl "
             initial={{ opacity: 0, y: 50 }} // Start off-screen, moving up
             whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
             viewport={{ once: true }} // Trigger when the image is in the viewport

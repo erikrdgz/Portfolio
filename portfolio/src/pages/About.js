@@ -17,7 +17,7 @@ const About = () => {
           backgroundAttachment: "fixed",
         }}
         >
-            <LiquidGlass className="relative z-10 container mx-auto px-4 py-2 rounded-xl">
+            <LiquidGlass className="relative z-10 container mx-auto px-4 py-4 rounded-3xl">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
 
                     <motion.div
@@ -30,7 +30,7 @@ const About = () => {
                         <img
                             src={me}
                             alt="About us"
-                            className="rounded-lg  w-full max-w-sm md:max-w-2xl"
+                            className="rounded-2xl  w-full max-w-sm md:max-w-2xl"
                         />
                     </motion.div>
 
